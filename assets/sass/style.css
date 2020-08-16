@@ -60,7 +60,7 @@ body {
 
 .login .card {
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   background-color: white;
 }
@@ -149,7 +149,7 @@ body {
 
 .table {
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   padding: 0;
   border: 0;
 }
@@ -184,7 +184,7 @@ body {
   background: white;
   height: 100%;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -369,14 +369,14 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     visibility: visible;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
 .new-user .card {
   background-color: #f9f9f9;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
 }
 
@@ -392,7 +392,7 @@ a[data-toggle="collapse"] {
 
 .card-big {
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   margin: 15px 10px;
   background-color: #f9f9f9;
@@ -406,7 +406,7 @@ a[data-toggle="collapse"] {
 
 .card-big .card-content .card-small {
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
 }
 
@@ -496,7 +496,7 @@ a[data-toggle="collapse"] {
   background: white;
   height: 100%;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -681,7 +681,7 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     visibility: visible;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -693,8 +693,8 @@ a[data-toggle="collapse"] {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   overflow-y: hidden;
 }
 
@@ -710,7 +710,7 @@ a[data-toggle="collapse"] {
   border-radius: 2px;
   background-color: #f8f8f8;
   -webkit-box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
-          box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
+  box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
   padding: 40px 90px;
 }
 
@@ -796,7 +796,7 @@ a[data-toggle="collapse"] {
   background: white;
   height: 100%;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -981,7 +981,7 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     visibility: visible;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -1003,7 +1003,7 @@ a:hover {
   background-color: #f8f8f8;
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
-          box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
+  box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
 }
 
 .newform .form_container .formContent h3 {
@@ -1040,14 +1040,14 @@ a:hover {
   background: none;
 }
 
-.newform .form_container .formContent .firstquestion {
+.newform .form_container .formContent .question {
   padding: 5px 150px 5px 10px;
-  color: #443A3A;
+  color: #443a3a;
   font-size: 16px;
   margin-right: 5px;
 }
 
-.newform .form_container .formContent .firstquestion input {
+.newform .form_container .formContent .question input {
   border: none;
   background: none;
   border-bottom: 1px solid #c9c7c7;
@@ -1055,7 +1055,7 @@ a:hover {
 
 .newform .form_container .formContent input:focus {
   outline: none;
-  color: #8D8D8D;
+  color: #8d8d8d;
 }
 
 .newform .form_container .formContent select {
@@ -1114,7 +1114,7 @@ a:hover {
 }
 
 .newform .bagla {
-  background-color: #F0F3F5;
+  background-color: #f0f3f5;
 }
 
 .newform .bagla .btn-outline-primary:hover {
@@ -1175,7 +1175,7 @@ a:hover {
   background: white;
   height: 100%;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -1360,7 +1360,7 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     visibility: visible;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -1379,7 +1379,7 @@ button {
   position: relative;
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
-          box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
+  box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
 }
 
 .table caption {
@@ -1391,11 +1391,11 @@ button {
   position: absolute;
   right: 0;
   padding: 5px 25px;
-  color: #007BFF !important;
+  color: #007bff !important;
 }
 
 .table caption button:hover {
-  background-color: #007BFF;
+  background-color: #007bff;
 }
 
 .table caption span {
@@ -1405,7 +1405,7 @@ button {
 }
 
 .table .btn-success:hover {
-  color: #28A745 !important;
+  color: #28a745 !important;
   background-color: white !important;
   border: none;
 }
@@ -1418,7 +1418,8 @@ button {
   font-weight: normal;
 }
 
-.table td, .table th {
+.table td,
+.table th {
   text-align: center;
   vertical-align: middle;
   height: 40px;
@@ -1461,7 +1462,7 @@ button {
   background: white;
   height: 100%;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -1646,7 +1647,7 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     visibility: visible;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -1668,7 +1669,7 @@ a:hover {
   background-color: #f8f8f8;
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
-          box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
+  box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
 }
 
 .newform .form_container .formContent h3 {
@@ -1707,7 +1708,7 @@ a:hover {
 
 .newform .form_container .formContent .firstquestion {
   padding: 5px 150px 5px 10px;
-  color: #443A3A;
+  color: #443a3a;
   font-size: 16px;
   margin-right: 5px;
 }
@@ -1720,7 +1721,7 @@ a:hover {
 
 .newform .form_container .formContent input:focus {
   outline: none;
-  color: #8D8D8D;
+  color: #8d8d8d;
 }
 
 .newform .form_container .formContent select {
@@ -1779,7 +1780,7 @@ a:hover {
 }
 
 .newform .bagla {
-  background-color: #F0F3F5;
+  background-color: #f0f3f5;
 }
 
 .newform .bagla .btn-outline-primary:hover {
@@ -1840,7 +1841,7 @@ a:hover {
   background: white;
   height: 100%;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -2025,7 +2026,7 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     visibility: visible;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -2058,7 +2059,7 @@ a[data-toggle="collapse"] {
   background: white;
   height: 100%;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -2243,7 +2244,7 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     visibility: visible;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -2265,7 +2266,7 @@ a:hover {
   background-color: #f8f8f8;
   border-radius: 5px;
   -webkit-box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
-          box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
+  box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
 }
 
 .newform .form_container .formContent h3 {
@@ -2304,7 +2305,7 @@ a:hover {
 
 .newform .form_container .formContent .firstquestion {
   padding: 5px 150px 5px 10px;
-  color: #443A3A;
+  color: #443a3a;
   font-size: 16px;
   margin-right: 5px;
 }
@@ -2317,7 +2318,7 @@ a:hover {
 
 .newform .form_container .formContent input:focus {
   outline: none;
-  color: #8D8D8D;
+  color: #8d8d8d;
 }
 
 .newform .form_container .formContent select {
@@ -2376,7 +2377,7 @@ a:hover {
 }
 
 .newform .bagla {
-  background-color: #F0F3F5;
+  background-color: #f0f3f5;
 }
 
 .newform .bagla .btn-outline-primary:hover {
@@ -2437,7 +2438,7 @@ a:hover {
   background: white;
   height: 100%;
   -webkit-box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
-          box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
+  box-shadow: 3px 6px 10px rgba(2, 74, 152, 0.1);
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -2622,7 +2623,7 @@ a[data-toggle="collapse"] {
   #sidebar.active {
     visibility: visible;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 

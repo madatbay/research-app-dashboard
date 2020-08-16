@@ -240,22 +240,71 @@ function addOther() {
   newLabel.appendChild(newInput);
   parent.appendChild(newLabel);
 }
-
 //variant elave et buttonu
 
-// function addSelect() {
+function addSelect() {
+  var activeType = document.getElementsByClassName("box");
+  let other = document.getElementsByClassName("digertype");
+  for (let o = 0; o < other.length; o++) {
+    try {
+      other[o].parentElement.remove();
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-// var select = document.getElementById("chooseSelect");
-// var parent2  = document.getElementById("addSelect");
+  for (let i = 0; i < activeType.length; i++) {
+    if (activeType[i].style.display == "block") {
+      let newLabel = document.createElement("label");
+      let elemType = document.createElement("input");
+      let elemText = document.createElement("input");
+      let br = document.createElement("br");
+      elemType.setAttribute(
+        "type",
+        activeType[i].childNodes[1].childNodes[0].type
+      );
+      elemText.setAttribute("type", "text");
+      elemText.className = "text";
+      elemText.value = "New Variant";
+      activeType[i].appendChild(newLabel);
+      newLabel.appendChild(elemType);
+      newLabel.appendChild(elemText);
+      newLabel.parentNode.append(br);
+    }
+  }
+  let newLabel = document.createElement("label");
+  let newInput = document.createElement("input");
+  newInput.type = "text";
+  newInput.className = "digertype";
 
-// if( select.selectedIndex = "0") {
-//   for(let i=0;i<5;i++) {
-//     var newLabel = document.createElement("label");
-//     var newInput1 = document.createElement("input");
-//     var newInput2 = document.createElement("input");
-//   }
-//   newLabel.appendChild(newInput1);
-//   newLabel.appendChild(newInput2);
-//   parent2.appendChild(newLabel);
-// }
-// }
+  for (let i = 0; i < activeType.length; i++) {
+    if (activeType[i].style.display == "block") {
+      newLabel.appendChild(document.createTextNode("Digər"));
+      newLabel.appendChild(newInput);
+      activeType[i].appendChild(newLabel);
+    }
+  }
+}
+
+function addQuestion() {
+  var activeType = document.getElementsByClassName("box");
+  var formAdd = document.getElementById("form");
+
+  var question = document.getElementById("question-input").cloneNode(true);
+  question.removeAttribute("id");
+  console.log(question.value);
+  var answers = null;
+  for (let i = 0; i < activeType.length; i++) {
+    if (activeType[i].style.display == "block") {
+      try {
+        answers = activeType[i].cloneNode(true);
+        answers.classList.remove("box");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
+  formAdd.appendChild(question);
+  formAdd.appendChild(answers);
+}
