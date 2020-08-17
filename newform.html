@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Users</title>
+
+  <!-- Bootstrap Styles-->
+  <link href="assets/lib/bootstrap.css" rel="stylesheet" />
+  <link href="assets/lib/bootstrap-grid.css" rel="stylesheet" />
+  <link href="assets/lib/bootstrap-reboot.css" rel="stylesheet" />
+  <!-- FontAwesome Styles-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles-->
+  <link href="assets/sass/style.css" rel="stylesheet" />
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="d-flex justify-content-around flex-column ">
+
+      <button type="button" id="sidebarCollapse" class="btn btn-outline-primary btn-lg text-right">
+        <i class="fa fa-bars"></i>
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+
+
+      <div class="username d-flex align-items-center flex-column justify-content-center">
+        <h2 class="text-center">
+          Mammadova Leyla
+        </h2>
+        <p class="badge badge-secondary">Admin</p>
+      </div>
+
+      <ul class="list-unstyled components align-self-center d-flex flex-column">
+        <li class="">
+          <a href="mainPage.html"> <img src="assets/img/shuttle.png" alt=""> <span>Dashboard</span> </a>
+        </li>
+        <li>
+          <a href="#" class="users"> <img src="assets/img/Path 591.png" alt=""> <span> İstifadəçilər</span></a>
+          <ul class=" list-unstyled active dropdown align-items-center d-flex flex-column">
+            <li> <a href="allUsers.html"><span>Bütün</span></a></li>
+            <li><a href="newUser.html"><span>Yarat</span></a></li>
+
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="surveys"> <img src="assets/img/google-forms.png" alt=""> <span> Sorğular</span></a>
+          <ul class=" list-unstyled active  align-items-center d-flex flex-column">
+            <li> <a href="allQueries.html"><span>Bütün</span></a></li>
+            <li class="active"><a href="newform.html"><span>Yarat</span></a></li>
+
+          </ul>
+        </li>
+
+        <li>
+
+          <a href="profile.html"> <img src="assets/img/Group 375.png" alt=""> <span>Parametrlər </span> </a>
+        </li>
+
+      </ul>
+      <div class="footer text-center">
+        <a href="./mainPage.html"><img src="assets/img/logout.png" alt=""> <span>Profildən çıxış</span></a>
+      </div>
+
+    </nav>
+
+    <div id="content" class="">
+
+      <section class="newform">
+        <div class="container form_container mt-5 ">
+          <div class="row">
+            <div class="col-12">
+              <div class="formContent py-4 px-3">
+                <h3>Yeni Form Əlavə Et</h3>
+                <form action="" id="form">
+
+                  <p class="title">
+                    <input type="text" placeholder="Form başlığı" required id="title">
+                  </p>
+                  <p class="description">
+                    <input type="text" required placeholder="Açıqlama" id="description">
+                  </p>
+                </form>
+                <form id="question-section">
+                  <p class="question" id="question">
+                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="" id="question-input">
+                  </p>
+                  <select id="chooseSelect">
+                    <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
+                    <option value="check" class="tablinks">Checkbox <i class="fa fa-angle-down"></i></option>
+                    <option value="open" class="tablinks">Open <i class="fa fa-angle-down"></i></option>
+                  </select>
+                  <div class="radiosection tabcontent radio box" id="Radio">
+                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                        value="Birinci cavab"></label><br />
+                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                        value="Birinci cavab"></label><br />
+                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                        value="Birinci cavab"></label><br />
+                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                        value="Birinci cavab"></label><br />
+                  </div>
+                  <div class="checksection tabcontent check box" id="Check">
+                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                        value="Birinci cavab"></label><br />
+                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                        value="Birinci cavab"></label><br />
+                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                        value="Birinci cavab"></label><br />
+                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                        value="Birinci cavab"></label><br />
+                  </div>
+                  <div class="opensection tabcontent open box" id="Open">
+                    <label>
+                      Cavab <input class="openAnswer othertype" type="text" />
+                    </label>
+                  </div>
+                  <div class="other text-right pb-5 px-3" id="func-buttons">
+                    <button type="button" class="btn btn-link" id="other" onclick="addOther()">Digər...</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="addQuestion()">Sual əlavə et</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə
+                      et</button>
+                    <button type="button" class="delete-button btn btn-outline-danger">Sil</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container bagla text-right my-4">
+          <button type="button" class="btn btn-outline-warning">Sıfırla</button>
+          <button type="submit" class="btn btn-outline-primary" id="addQuestion">Əlavə et</button>
+        </div>
+    </div>
+    <div id="delete-modal" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Diqqət! </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Bu məlumatı silmək istədiyinizdən əminsinizmi?</p>
+          </div>
+          <div class="modal-footer">
+            <form action="">
+              <button type="submit" class="save-delete-button btn btn-primary">Sil</button>
+              <button type="button" class=" cancel-button btn btn-secondary" data-dismiss="modal">Ləğv et</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+  </div>
+
+
+  <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
