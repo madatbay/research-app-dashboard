@@ -245,16 +245,13 @@ function addSelect() {
       elemText.setAttribute("type", "text");
       elemText.className = "text";
       elemText.value = "Yeni Variant";
+      elemText.style.color = "#8d8d8d";
       activeType[i].appendChild(newLabel);
       newLabel.appendChild(elemType);
       newLabel.appendChild(elemText);
       newLabel.parentNode.append(br);
     }
   }
-  let newLabel = document.createElement("label");
-  let newInput = document.createElement("input");
-  newInput.type = "text";
-  newInput.className = "digertype";
 
   for (let i = 0; i < activeType.length; i++) {
     if (activeType[i].style.display == "block") {
