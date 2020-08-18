@@ -92,6 +92,12 @@ a:hover {
         padding: 30px 10px;
         color: #8d8d8d;
         font-size: 15px;
+
+        .digertype {
+          border: none;
+          border-bottom: 1px solid #8d8d8d;
+          background: none;
+        }
       }
 
       .opensection span {
@@ -120,16 +126,16 @@ a:hover {
     }
   }
 
-  .close {
+  .bagla {
     background-color: #f0f3f5;
   }
 
-  .close .btn-outline-primary:hover {
+  .bagla .btn-outline-primary:hover {
     color: white !important;
   }
 
   .btn {
-    transition: all 0.3s ease-in-out !important;
+    transition: all 1s ease-in-out !important;
     margin-right: 10px;
   }
 }
@@ -154,9 +160,4 @@ a:hover {
 
 #other:hover {
   text-decoration: none;
-}
-.othertype {
-  border: none;
-  border-bottom: 1px solid #8d8d8d;
-  background: none;
 }
