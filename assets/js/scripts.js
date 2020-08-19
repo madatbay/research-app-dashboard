@@ -143,7 +143,7 @@ $("#sidebarCollapse").on("click", function () {
   $("#sidebar").toggleClass("active");
 });
 
-$(".users").on("click", function () {
+$(".users-nav").on("click", function () {
   $(this).next("ul").toggleClass("dropdown");
 });
 
@@ -195,41 +195,25 @@ $(".save-changes-button").click(function () {
 // profile save info
 
 $(document).ready(function () {
-  $("form").submit(function () {
+  $("#profileForm").submit(function () {
     alert("Məlumatlar uğurla yadda saxlanıldı");
   });
 });
+//addInfo function in newForm page
+
+function addInfo() {
+  alert("Məlumatlar uğurla yadda saxlanıldı");
+}
 
 //tesdiqle
 function confirm() {
   alert("Form uğurla təsdiqləndi");
 }
 
-// form
-
-// var form = document.querySelector("#form");
-// var title = document.querySelector("#title");
-// var description = document.querySelector("#description");
-// var addForm = document.querySelector("#addForm");
-// var other = document.querySelector("#other");
-// var addQuestion = document.querySelector("#addQuestion");
-
-// eventListeners();
-
-// function eventListeners() {  //butun funksiyalar
-//    form.addEventListener("submit",addForm);
-// }
-
-// function addForm(e) {
-//   const newTitle = title.value;
-//   console.log(newTitle);
-
-//   e.preventDefault();
-// }
 
 //diger buttonu
 
-function addOther() {
+$("#other").one("click", function(){
   var parent = document.querySelector("#addOther");
   var newLabel = document.createElement("label");
   var newInput = document.createElement("input");
@@ -239,7 +223,8 @@ function addOther() {
   newLabel.appendChild(document.createTextNode("Digər"));
   newLabel.appendChild(newInput);
   parent.appendChild(newLabel);
-}
+});
+
 //variant elave et buttonu
 
 function addSelect() {
@@ -265,17 +250,13 @@ function addSelect() {
       );
       elemText.setAttribute("type", "text");
       elemText.className = "text";
-      elemText.value = "New Variant";
+      elemText.value = "Yeni Variant";
       activeType[i].appendChild(newLabel);
       newLabel.appendChild(elemType);
       newLabel.appendChild(elemText);
       newLabel.parentNode.append(br);
     }
   }
-  let newLabel = document.createElement("label");
-  let newInput = document.createElement("input");
-  newInput.type = "text";
-  newInput.className = "digertype";
 
   for (let i = 0; i < activeType.length; i++) {
     if (activeType[i].style.display == "block") {
@@ -285,6 +266,8 @@ function addSelect() {
     }
   }
 }
+
+//sual elave et
 
 function addQuestion() {
   var activeType = document.getElementsByClassName("box");

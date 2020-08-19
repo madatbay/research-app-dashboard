@@ -44,7 +44,7 @@
           <a href="mainPage.html"> <img src="assets/img/shuttle.png" alt=""> <span>Dashboard</span> </a>
         </li>
         <li>
-          <a href="#" class="users"> <img src="assets/img/Path 591.png" alt=""> <span> İstifadəçilər</span></a>
+          <a href="#" class="users-nav"> <img src="assets/img/Path 591.png" alt=""> <span> İstifadəçilər</span></a>
           <ul class=" list-unstyled active dropdown align-items-center d-flex flex-column">
             <li> <a href="allUsers.html"><span>Bütün</span></a></li>
             <li><a href="newUser.html"><span>Yarat</span></a></li>
@@ -67,12 +67,12 @@
 
       </ul>
       <div class="footer text-center">
-        <a href=""><img src="assets/img/logout.png" alt=""> <span>Profildən çıxış</span></a>
+        <a href="./mainPage.html"><img src="assets/img/logout.png" alt=""> <span>Profildən çıxış</span></a>
       </div>
 
     </nav>
 
-    <div id="content" class="">
+    <div id="content">
 
       <section class="newform">
         <div class="container form_container mt-5 ">
@@ -81,7 +81,6 @@
               <div class="formContent py-4 px-3">
                 <h3>Yeni Form Əlavə Et</h3>
                 <form action="" id="form">
-
                   <p class="title">
                     <input type="text" placeholder="Form başlığı" required id="title">
                   </p>
@@ -91,7 +90,7 @@
                 </form>
                 <form id="question-section">
                   <p class="question" id="question">
-                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="" id="question-input">
+                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="İlk sualımız budur ki,..." id="question-input">
                   </p>
                   <select id="chooseSelect">
                     <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
@@ -117,7 +116,6 @@
                         value="Birinci cavab"></label><br />
                     <label><input type="checkbox" id="" /><input class="text" type="text"
                         value="Birinci cavab"></label><br />
-                    <div id="addSelect"></div>
                   </div>
                   <div class="opensection tabcontent open box" id="Open">
                     <label>
@@ -126,7 +124,7 @@
                   </div>
                   <div id="addOther"></div>
                   <div class="other text-right pb-5 px-3" id="func-buttons">
-                    <button type="button" class="btn btn-link" id="other" onclick="addOther()">Digər...</button>
+                    <button type="button" class="btn btn-link" id="other">Digər...</button>
                     <button type="button" class="btn btn-outline-primary" onclick="addQuestion()">Sual əlavə et</button>
                     <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə et</button>
                     <button type="button" class="delete-button btn btn-outline-danger">Sil</button>
@@ -136,9 +134,9 @@
             </div>
           </div>
         </div>
-        <div class="container bagla text-right my-4">
+        <div class="container close text-right my-4">
           <button type="button" class="btn btn-outline-warning">Sıfırla</button>
-          <button type="submit" class="btn btn-outline-primary" id="addQuestion">Əlavə et</button>
+          <button type="submit" class="btn btn-outline-primary" id="addQuestion" onclick="addInfo()">Əlavə et</button>
         </div>
     </div>
     <div id="delete-modal" class="modal" tabindex="-1" role="dialog">

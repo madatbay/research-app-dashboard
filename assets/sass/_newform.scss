@@ -3,13 +3,15 @@
 body {
   background-color: #f0f3f5;
 }
-
+button {
+  transition: all 0.3s ease-in-out !important;
+}
 a:hover {
   text-decoration: none !important;
 }
 
 .newform {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 
   .form_container {
@@ -33,23 +35,13 @@ a:hover {
 
       .title {
         font-size: 20px;
-
-        input {
-          border: none;
-          background: none;
-          border-bottom: 1px solid #c9c7c7;
-        }
       }
 
       .description {
-        border-bottom: 1px solid #c9c7c7;
-        text-indent: 5px;
         margin-bottom: 70px;
 
         input {
           width: 100%;
-          border: none;
-          background: none;
         }
       }
 
@@ -57,13 +49,7 @@ a:hover {
         padding: 5px 150px 5px 10px;
         color: #443a3a;
         font-size: 16px;
-        margin-right: 5px;
-
-        input {
-          border: none;
-          background: none;
-          border-bottom: 1px solid #c9c7c7;
-        }
+        margin-left: 0 !important;
       }
 
       input:focus {
@@ -92,12 +78,6 @@ a:hover {
         padding: 30px 10px;
         color: #8d8d8d;
         font-size: 15px;
-
-        .digertype {
-          border: none;
-          border-bottom: 1px solid #8d8d8d;
-          background: none;
-        }
       }
 
       .opensection span {
@@ -110,7 +90,6 @@ a:hover {
 
       .text {
         border: none;
-        background: none;
         color: #443a3a;
       }
     }
@@ -126,16 +105,15 @@ a:hover {
     }
   }
 
-  .bagla {
+  .close {
     background-color: #f0f3f5;
   }
 
-  .bagla .btn-outline-primary:hover {
+  .close .btn-outline-primary:hover {
     color: white !important;
   }
 
   .btn {
-    transition: all 1s ease-in-out !important;
     margin-right: 10px;
   }
 }
@@ -160,4 +138,9 @@ a:hover {
 
 #other:hover {
   text-decoration: none;
+}
+input {
+  border: none;
+  background: none;
+  border-bottom: 1px solid #c9c7c7;
 }

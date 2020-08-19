@@ -1,25 +1,37 @@
+
 $dark-grey: #443a3a;
 $medium-grey: #5a5a5a;
 $light-grey: #f9f9f9;
 $bg-color: #f0f3f5;
 
+
+@mixin shadow-box {
+  box-shadow: 3px 6px 10px rgba($color: #024a98, $alpha: 0.1);
+  border: none;
+}
+
 .table {
   color: $dark-grey;
-  position: relative;
+  border-radius: 5px;
+  
+  @include shadow-box;
+  padding: 0;
+  border: 0;
+
   caption {
     caption-side: top;
+  a {
+    margin-right: 15px;
+    position: absolute;
+    right: 0;
+    padding: 5px 25px;
+  }
+   span {
+    padding-left: 15px;
+    font-size: 22px;
+    color: $dark-grey;
+  }
 
-    button {
-      margin-right: 15px;
-      position: absolute;
-      right: 0;
-      padding: 5px 25px;
-    }
-    span {
-      padding-left: 15px;
-      font-size: 22px;
-      color: $dark-grey;
-    }
   }
   th {
     font-weight: normal;
@@ -31,10 +43,7 @@ body {
   color: $dark-grey;
 }
 
-@mixin shadow-box {
-  box-shadow: 3px 6px 10px rgba($color: #024a98, $alpha: 0.1);
-  border: none;
-}
+
 
 .input-group-text{
   background-color: rgba($color: #8D8D8D, $alpha: 0.01);
@@ -60,6 +69,17 @@ color: white;
   }
 }
 
-#content{
-  margin-left: 25%;
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+
+#content {
+  
+  width: 78%;
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: absolute;
+  right: 0px;
 }

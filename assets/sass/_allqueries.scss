@@ -1,4 +1,4 @@
-@import "navbar";
+
 
 button {
   transition: all 1s ease-in-out !important;
@@ -7,29 +7,9 @@ button {
    width: 95%;
    margin: 0 auto;
 }
+
 .table {
-    color: #443a3a;
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(2, 74, 152, 0.05);
-  caption {
-    caption-side: top;
-  button {
-    margin-right: 15px;
-    position: absolute;
-    right: 0;
-    padding: 5px 25px;
-    color: #007BFF !important;
-    &:hover {
-      background-color: #007BFF;
-    }
-  }
-   span {
-    padding-left: 15px;
-    font-size: 22px;
-    color: #443a3a;
-  }
-}
+
 .btn-success:hover {
   color: #28A745 !important;
   background-color: white !important;
@@ -38,9 +18,7 @@ button {
 .text-success {
   border: none !important;
 }
- th {
-    font-weight: normal;
-  }
+
   td,th {
       text-align: center;
       vertical-align: middle;
