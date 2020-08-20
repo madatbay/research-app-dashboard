@@ -86,10 +86,8 @@
   display: block;
   color: rgba($color: $medium-grey, $alpha: 0.8);
 }
-#sidebar ul li img {
-  width: 20px;
-  height: auto;
-  margin: 5px;
+#sidebar ul li a>  i {
+margin:  0 10px;
 }
 #sidebar ul li a span {
   margin-right: 15px;
