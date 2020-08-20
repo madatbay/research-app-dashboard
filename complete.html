@@ -47,38 +47,39 @@
       </div>
 
       <ul class="list-unstyled components align-self-center d-flex flex-column">
-        <li class="">
-          <a href="mainPage.html"> <img src="assets/img/shuttle.png" alt=""> <span>Dashboard</span> </a>
+        <li >
+          <a href="mainPage.html"> <i class="fas fa-rocket"></i> <span>Dashboard</span> </a>
         </li>
         <li>
-          <a href="#" class="users"> <img src="assets/img/Path 591.png" alt=""> <span> İstifadəçilər</span></a>
-          <ul class=" list-unstyled active dropdown align-items-center d-flex flex-column">
-            <li> <a href="allUsers.html"><span>Bütün</span></a></li>
+          <a href="#" class="users-nav"><i class="fas fa-users"></i>  <span> İstifadəçilər</span></a>
+          <ul class=" list-unstyled active dropdown  align-items-center d-flex flex-column">
+            <li > <a href="allUsers.html"><span>Bütün</span></a></li>
             <li><a href="newUser.html"><span>Yarat</span></a></li>
 
           </ul>
         </li>
         <li>
-          <a href="#" class="surveys"> <img src="assets/img/google-forms.png" alt=""> <span> Sorğular</span></a>
+          <a href="#" class="surveys"><i class="fas fa-file-alt"></i> <span> Sorğular</span></a>
           <ul class=" list-unstyled active  align-items-center d-flex flex-column">
-            <li class="active"> <a href="allQueries.html"><span>Bütün</span></a></li>
-            <li><a href="newform.html"><span>Yarat</span></a></li>
+            <li> <a href="allQueries.html"><span>Bütün</span></a></li>
+            <li class="active"><a href="newform.html"><span>Yarat</span></a></li>
 
           </ul>
         </li>
 
         <li>
 
-          <a href="profile.html"> <img src="assets/img/Group 375.png" alt=""> <span>Parametrlər </span> </a>
+          <a href="./profile.html"><i class="fas fa-cog"></i> <span>Parametrlər </span> </a>
         </li>
 
       </ul>
       <div class="footer text-center">
-        <a href=""><img src="assets/img/logout.png" alt=""> <span>Profildən çıxış</span></a>
+        <a href="./index.html">
+          <i class="fas fa-sign-out-alt"></i>
+        <span>Profildən çıxış</span></a>
       </div>
 
     </nav>
-
     <div id="content">
       <section class="users-section min-vh-100 d-flex align-items-center justify-content-center">
         <div class="container form_container my-5">
@@ -94,7 +95,7 @@
                     readonly>
                 </p>
                 <p class="firstquestion">
-                  <input type="text" required placeholder="İlk sualımız budur ki,..." class="othertype" />
+                  <input type="text" required placeholder="İlk sualımız budur ki,..." />
                 </p>
                 <div class="checksection">
                   <label><input type="checkbox" /><input class="text" type="text" value="Birinci cavab"
@@ -105,11 +106,10 @@
                       readonly></label><br />
                   <label><input type="checkbox" /><input class="text" type="text" value="Birinci cavab"
                       readonly></label><br />
-                  Digər <input class="othertype" type="text" />
                 </div>
 
                 <p class="firstquestion">
-                  <input type="text" required placeholder="İlk sualımız budur ki,..." class="othertype" />
+                  <input type="text" required placeholder="İlk sualımız budur ki,...">
                 </p>
                 <div class="radiosection">
                   <label><input type="radio" name="rad" /><input class="text" type="text" value="Birinci cavab"
@@ -120,14 +120,13 @@
                       readonly></label><br />
                   <label><input type="radio" name="rad" /><input class="text" type="text" value="Birinci cavab"
                       readonly></label><br />
-                  Digər <input class="othertype" type="text" />
                 </div>
 
                 <p class="firstquestion">
-                  <input type="text" required placeholder="İlk sualımız budur ki,..." class="othertype" />
+                  <input type="text" required placeholder="İlk sualımız budur ki,...">
                 </p>
                 <div class="opensection">
-                  Cavab <input class="othertype" type="text" class="othertype" />
+                  Cavab <input type="text" />
                 </div>
                 <div class="other text-right pb-5 px-3">
                   <button type="button" class="btn btn-outline-success" onclick="confirm()">Təsdiqlə</button>

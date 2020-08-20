@@ -50,7 +50,7 @@
           <a href="mainPage.html"> <img src="assets/img/shuttle.png" alt=""> <span>Dashboard</span> </a>
         </li>
         <li>
-          <a href="#" class="users"> <img src="assets/img/Path 591.png" alt=""> <span> İstifadəçilər</span></a>
+          <a href="#" class="users-nav"> <img src="assets/img/Path 591.png" alt=""> <span> İstifadəçilər</span></a>
           <ul class=" list-unstyled active dropdown align-items-center d-flex flex-column">
             <li> <a href="allUsers.html"><span>Bütün</span></a></li>
             <li><a href="newUser.html"><span>Yarat</span></a></li>
@@ -73,7 +73,7 @@
 
       </ul>
       <div class="footer text-center">
-        <a href=""><img src="assets/img/logout.png" alt=""> <span>Profildən çıxış</span></a>
+        <a href="./mainPage.html"><img src="assets/img/logout.png" alt=""> <span>Profildən çıxış</span></a>
       </div>
 
     </nav>
@@ -93,8 +93,7 @@
                     <input type="text" required placeholder="Açıqlama" value="Bu sorğu test məqsədi ilə hazırlanmışdır">
                   </p>
                   <p class="firstquestion">
-                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual"
-                      id="question-input">
+                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual">
                   </p>
                   <div class="checksection">
                     <label><input type="checkbox" /><input class="text" type="text" value="Birinci cavab"></label><br />
@@ -104,8 +103,7 @@
                   </div>
 
                   <p class="firstquestion">
-                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual"
-                      id="question-input">
+                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual">
                   </p>
                   <div class="radiosection">
                     <label><input type="radio" name="rad" /><input class="text" type="text"
@@ -119,58 +117,52 @@
                   </div>
 
                   <p class="firstquestion">
-                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual"
-                      id="question-input">
+                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual">
                   </p>
                   <div class="opensection">
-                    Cavab <input class="othertype" type="text" />
+                    Cavab <input type="text" />
                   </div>
                   <br><br><br><br><br><br><br><br>
-
-                  <p class="firstquestion">
-                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual"
-                      id="question-input">
-                  </p>
-                  <select id="chooseSelect">
-                    <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
-                    <option value="check" class="tablinks">Checkbox <i class="fa fa-angle-down"></i></option>
-                    <option value="open" class="tablinks">Open <i class="fa fa-angle-down"></i></option>
-                  </select>
-                  <div class="radiosection tabcontent radio box" id="Radio">
-                    <label><input type="radio" name="rad" id="" /> Birinci cavab</label><br />
-                    <label><input type="radio" name="rad" id="" /> Birinci cavab</label><br />
-                    <label><input type="radio" name="rad" id="" /> Birinci cavab</label><br />
-                    <label><input type="radio" name="rad" id="" /> Birinci cavab</label><br />
-                  </div>
-                  <div class="checksection tabcontent check box" id="Check">
-                    <label><input type="checkbox" id="" /> <input class="text" type="text"
-                        value="Birinci cavab"></label><br />
-                    <label><input type="checkbox" id="" /> <input class="text" type="text"
-                        value="Birinci cavab"></label><br />
-                    <label><input type="checkbox" id="" /> <input class="text" type="text"
-                        value="Birinci cavab"></label><br />
-                    <label><input type="checkbox" id="" /> <input class="text" type="text"
-                        value="Birinci cavab"></label><br />
-                  </div>
-                  <div class="opensection tabcontent open box" id="Open">
-                    <label>
-                      Cavab <input class="openAnswer othertype" type="text" />
-                    </label>
-                  </div>
-                  <div id="addOther"></div>
-                  <div class="other text-right pb-5 px-3" id="func-buttons">
-                    <button type="button" class="btn btn-link" id="other">Digər...</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addQuestion()">Sual əlavə et</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə
-                      et</button>
-                    <button type="button" class="delete-button btn btn-outline-danger">Sil</button>
-                  </div>
                 </form>
+                  <form id="question-section">
+                    <p class="question" id="question">
+                      <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual" id="question-input">
+                    </p>
+                    <select id="chooseSelect">
+                      <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
+                      <option value="check" class="tablinks">Checkbox <i class="fa fa-angle-down"></i></option>
+                      <option value="open" class="tablinks">Open <i class="fa fa-angle-down"></i></option>
+                    </select>
+                    <div class="radiosection tabcontent radio box" id="Radio">
+                      <label><input type="radio" name="rad" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
+                      <label><input type="radio" name="rad" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
+                      <label><input type="radio" name="rad" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
+                      <label><input type="radio" name="rad" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
+                    </div>
+                    <div class="checksection tabcontent check box" id="Check">
+                      <label><input type="checkbox" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
+                      <label><input type="checkbox" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
+                      <label><input type="checkbox" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
+                      <label><input type="checkbox" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
+                    </div>
+                    <div class="opensection tabcontent open box" id="Open">
+                      <label>
+                        Cavab <input class="openAnswer" type="text" />
+                      </label>
+                    </div>
+                    <div id="addOther"></div>
+                    <div class="other text-right pb-5 px-3" id="func-buttons">
+                      <button type="button" class="btn btn-link" id="other">Digər...</button>
+                      <button type="button" class="btn btn-outline-primary" onclick="addQuestion()">Sual əlavə et</button>
+                      <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə et</button>
+                      <button type="button" class="delete-button btn btn-outline-danger">Sil</button>
+                    </div>
+                  </form>
               </div>
             </div>
           </div>
           <div class="container close text-right py-4">
-            <button type="button" class="btn btn-outline-success mr-3" onclick="save()">Yadda saxla</button>
+            <button type="button" class="btn btn-outline-success mr-3" onclick="addInfo()">Yadda saxla</button>
             <button type="button" class="btn btn-outline-danger remove-button">Ləğv et</button>
           </div>
         </div>

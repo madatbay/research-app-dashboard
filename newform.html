@@ -40,19 +40,19 @@
       </div>
 
       <ul class="list-unstyled components align-self-center d-flex flex-column">
-        <li class="">
-          <a href="mainPage.html"> <img src="assets/img/shuttle.png" alt=""> <span>Dashboard</span> </a>
+        <li >
+          <a href="mainPage.html"> <i class="fas fa-rocket"></i> <span>Dashboard</span> </a>
         </li>
         <li>
-          <a href="#" class="users"> <img src="assets/img/Path 591.png" alt=""> <span> İstifadəçilər</span></a>
-          <ul class=" list-unstyled active dropdown align-items-center d-flex flex-column">
-            <li> <a href="allUsers.html"><span>Bütün</span></a></li>
+          <a href="#" class="users-nav"><i class="fas fa-users"></i>  <span> İstifadəçilər</span></a>
+          <ul class=" list-unstyled active dropdown  align-items-center d-flex flex-column">
+            <li > <a href="allUsers.html"><span>Bütün</span></a></li>
             <li><a href="newUser.html"><span>Yarat</span></a></li>
 
           </ul>
         </li>
         <li>
-          <a href="#" class="surveys"> <img src="assets/img/google-forms.png" alt=""> <span> Sorğular</span></a>
+          <a href="#" class="surveys"><i class="fas fa-file-alt"></i> <span> Sorğular</span></a>
           <ul class=" list-unstyled active  align-items-center d-flex flex-column">
             <li> <a href="allQueries.html"><span>Bütün</span></a></li>
             <li class="active"><a href="newform.html"><span>Yarat</span></a></li>
@@ -62,17 +62,18 @@
 
         <li>
 
-          <a href="profile.html"> <img src="assets/img/Group 375.png" alt=""> <span>Parametrlər </span> </a>
+          <a href="./profile.html"><i class="fas fa-cog"></i> <span>Parametrlər </span> </a>
         </li>
 
       </ul>
       <div class="footer text-center">
-        <a href="./mainPage.html"><img src="assets/img/logout.png" alt=""> <span>Profildən çıxış</span></a>
+        <a href="./index.html">
+          <i class="fas fa-sign-out-alt"></i>
+        <span>Profildən çıxış</span></a>
       </div>
 
     </nav>
-
-    <div id="content" class="">
+    <div id="content">
 
       <section class="newform">
         <div class="container form_container mt-5 ">
@@ -81,7 +82,6 @@
               <div class="formContent py-4 px-3">
                 <h3>Yeni Form Əlavə Et</h3>
                 <form action="" id="form">
-
                   <p class="title">
                     <input type="text" placeholder="Form başlığı" required id="title">
                   </p>
@@ -91,7 +91,7 @@
                 </form>
                 <form id="question-section">
                   <p class="question" id="question">
-                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="" id="question-input">
+                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="İlk sualımız budur ki,..." id="question-input">
                   </p>
                   <select id="chooseSelect">
                     <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
@@ -120,15 +120,14 @@
                   </div>
                   <div class="opensection tabcontent open box" id="Open">
                     <label>
-                      Cavab <input class="openAnswer othertype" type="text" />
+                      Cavab <input class="openAnswer" type="text" />
                     </label>
                   </div>
-                   <div id="addOther"></div>
+                  <div id="addOther"></div>
                   <div class="other text-right pb-5 px-3" id="func-buttons">
                     <button type="button" class="btn btn-link" id="other">Digər...</button>
                     <button type="button" class="btn btn-outline-primary" onclick="addQuestion()">Sual əlavə et</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə
-                      et</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə et</button>
                     <button type="button" class="delete-button btn btn-outline-danger">Sil</button>
                   </div>
                 </form>
@@ -136,9 +135,9 @@
             </div>
           </div>
         </div>
-        <div class="container bagla text-right my-4">
+        <div class="container close text-right my-4">
           <button type="button" class="btn btn-outline-warning">Sıfırla</button>
-          <button type="submit" class="btn btn-outline-primary" id="addQuestion">Əlavə et</button>
+          <button type="submit" class="btn btn-outline-primary" id="addQuestion" onclick="addInfo()">Əlavə et</button>
         </div>
     </div>
     <div id="delete-modal" class="modal" tabindex="-1" role="dialog">

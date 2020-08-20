@@ -143,7 +143,7 @@ $("#sidebarCollapse").on("click", function () {
   $("#sidebar").toggleClass("active");
 });
 
-$(".users").on("click", function () {
+$(".users-nav").on("click", function () {
   $(this).next("ul").toggleClass("dropdown");
 });
 
@@ -195,15 +195,21 @@ $(".save-changes-button").click(function () {
 // profile save info
 
 $(document).ready(function () {
-  $("form").submit(function () {
+  $("#profileForm").submit(function () {
     alert("Məlumatlar uğurla yadda saxlanıldı");
   });
 });
+//addInfo function in newForm page
+
+function addInfo() {
+  alert("Məlumatlar uğurla yadda saxlanıldı");
+}
 
 //tesdiqle
 function confirm() {
   alert("Form uğurla təsdiqləndi");
 }
+
 
 //diger buttonu
 
@@ -245,7 +251,6 @@ function addSelect() {
       elemText.setAttribute("type", "text");
       elemText.className = "text";
       elemText.value = "Yeni Variant";
-      elemText.style.color = "#8d8d8d";
       activeType[i].appendChild(newLabel);
       newLabel.appendChild(elemType);
       newLabel.appendChild(elemText);
@@ -261,6 +266,8 @@ function addSelect() {
     }
   }
 }
+
+//sual elave et
 
 function addQuestion() {
   var activeType = document.getElementsByClassName("box");
