@@ -12,68 +12,73 @@
   <link href="assets/lib/bootstrap-reboot.css" rel="stylesheet" />
   <!-- FontAwesome Styles-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" />
-
   <!-- Custom Styles-->
   <link href="assets/sass/style.css" rel="stylesheet" />
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Google Fonts-->
+
+
+
+
+
 </head>
 
 <body>
   <div class="wrapper d-flex align-items-stretch">
 
-    <!-- Sidebar -->
-    <nav id="sidebar" class="d-flex justify-content-around flex-column ">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="d-flex justify-content-around flex-column ">
 
-      <button type="button" id="sidebarCollapse" class="btn btn-outline-primary btn-lg text-right">
-        <i class="fa fa-bars"></i>
-        <span class="sr-only">Toggle Menu</span>
-      </button>
-
-
-      <div class="username d-flex align-items-center flex-column justify-content-center">
-        <h2 class="text-center">
-          Mammadova Leyla
-        </h2>
-        <p class="badge badge-secondary">Admin</p>
-      </div>
-
-      <ul class="list-unstyled components align-self-center d-flex flex-column">
-        <li class="active">
-          <a href="mainPage.html"> <i class="fas fa-rocket"></i> <span>Dashboard</span> </a>
-        </li>
-        <li>
-          <a href="#" class="users-nav"><i class="fas fa-users"></i>  <span> İstifadəçilər</span></a>
-          <ul class=" list-unstyled active dropdown  align-items-center d-flex flex-column">
-            <li > <a href="allUsers.html"><span>Bütün</span></a></li>
-            <li><a href="newUser.html"><span>Yarat</span></a></li>
-
+          <button type="button" id="sidebarCollapse" class="btn btn-outline-primary btn-lg text-right">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+    
+    
+          <div class="username d-flex align-items-center flex-column justify-content-center">
+            <h2 class="text-center">
+              Mammadova Leyla
+            </h2>
+            <p class="badge badge-secondary">Admin</p>
+          </div>
+    
+          <ul class="list-unstyled components align-self-center d-flex flex-column">
+            <li class="active">
+              <a href="mainPage.html"> <i class="fas fa-rocket"></i> <span>Dashboard</span> </a>
+            </li>
+            <li>
+              <a href="#" class="users-nav"><i class="fas fa-users"></i>  <span> İstifadəçilər</span></a>
+              <ul class=" list-unstyled active dropdown  align-items-center d-flex flex-column">
+                <li > <a href="allUsers.html"><i class="fas fa-users-cog"></i> <span>Bütün</span></a></li>
+                <li><a href="newUser.html"><i class="fas fa-user-plus"></i> <span>Yarat</span></a></li>
+    
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="surveys"><i class="fas fa-file"></i> <span> Sorğular</span></a>
+              <ul class=" list-unstyled active dropdown  align-items-center d-flex flex-column">
+                <li> <a href="allQueries.html"><i class="fas fa-file-alt"></i>  <span>Bütün</span></a></li>
+                <li><a href="newform.html"> <i class="far fa-file"></i> <span>Yarat</span></a></li>
+    
+              </ul>
+            </li>
+    
+            <li>
+    
+              <a href="./profile.html"><i class="fas fa-cog"></i> <span>Parametrlər </span> </a>
+            </li>
+    
           </ul>
-        </li>
-        <li>
-          <a href="#" class="surveys"><i class="fas fa-file-alt"></i> <span> Sorğular</span></a>
-          <ul class=" list-unstyled active dropdown align-items-center d-flex flex-column">
-            <li> <a href="allQueries.html"><span>Bütün</span></a></li>
-            <li><a href="newform.html"><span>Yarat</span></a></li>
-
-          </ul>
-        </li>
-
-        <li>
-
-          <a href="./profile.html"><i class="fas fa-cog"></i> <span>Parametrlər </span> </a>
-        </li>
-
-      </ul>
-      <div class="footer text-center">
-        <a href="./index.html">
-          <i class="fas fa-sign-out-alt"></i>
-        <span>Profildən çıxış</span></a>
-      </div>
-
-    </nav>
+          <div class="footer text-center">
+            <a href="./index.html">
+              <i class="fas fa-sign-out-alt"></i>
+            <span>Profildən çıxış</span></a>
+          </div>
+    
+        </nav>
+  
     <div id="content" class="">
 
 
@@ -81,7 +86,7 @@
       <section class="min-vh-100">
         <div class="container">
           <div class="row justify-content-center align-items-stretch pt-4">
-            <div class="card top-big-card card-big col-sm-8 col-10  ">
+            <div class="card top-big-card card-big col-sm-8">
 
               <div class="card-body ">
                 <div class="card-content">
@@ -92,7 +97,7 @@
                       <div class="card-body">
                         <div class="card-content d-flex justify-content-center align-items-center">
                           <div class="card-icon row justify-content-center d-flex align-items-center">
-                            <i class="far fa-file-alt"></i>
+                            <a href="./allQueries.html"><img src="assets/img/big-google-forms.png" alt=""></a>
                           </div>
                         </div>
                         <div class="card-title text-center my-2">
@@ -105,7 +110,7 @@
                       <div class="card-body">
                         <div class="card-content d-flex justify-content-center align-items-center">
                           <div class="card-icon row justify-content-center d-flex align-items-center">
-                            <i class="fas fa-users"></i>
+                            <a href="./allUsers.html"> <img src="assets/img/Group 551.png" alt=""></a>
                           </div>
                         </div>
                         <div class="card-title text-center my-2">
@@ -145,17 +150,17 @@
 
                   <div class="quick-action row justify-content-between ">
                     <span class="quick-action-name ">New Form</span>
-                   <a class="btn btn-sm btn-outline-primary col-4"  href="newform.html">Add</a>
+                    <a class="btn btn-sm btn-outline-primary col-4" href="newform.html">Add</a>
                   </div>
 
                   <div class="quick-action   row justify-content-between ">
                     <span class="quick-action-name ">New User</span>
-                  <a class="btn btn-sm btn-outline-primary col-4"   href="newUser.html">Add</a>
+                    <a class="btn btn-sm btn-outline-primary col-4" href="newUser.html">Add</a>
                   </div>
 
                   <div class="quick-action   row justify-content-between ">
                     <span class="quick-action-name ">Change Password</span>
-                  <a  class="btn btn-sm btn-outline-primary col-4"   href="profile.html">Go</a>
+                    <a class="btn btn-sm btn-outline-primary col-4" href="profile.html">Go</a>
                   </div>
 
                 </div>
@@ -165,90 +170,90 @@
               </div>
             </div>
           </div>
-            <div class="bottom-card card  card-big col-11 ">
+          <div class="bottom-card card  card-big ">
 
-              <div class="card-body">
+            <div class="card-body">
 
-                <div class="card-content col-12">
-                  <div class="row justify-content-between  align-items-end ">
-                    <div class="card card-small col-md-3 col-12">
-                      <div class="card-body">
-                        <div class="card-content d-flex justify-content-center align-items-center">
+              <div class="card-content col-12">
+                <div class="row justify-content-between  align-items-end ">
+                  <div class="card card-small col-md-3 col-12">
+                    <div class="card-body">
+                      <div class="card-content d-flex justify-content-center align-items-center">
 
-                          <div class="small-card-text">
-                            <h3>Research One <img class="research-button" src="assets/img/Group 616.png" alt=""></h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem modi! Maxime
-                              voluptatum
-                              perspiciatis ab quidem deserunt totam quia hic natus? Deleniti, magni illum enim veniam
-                              cupiditate
-                              doloremque ab architecto.</p>
+                        <div class="small-card-text">
+                          <h3>Research One <img class="research-button" src="assets/img/Group 616.png" alt=""></h3>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem modi! Maxime
+                            voluptatum
+                            perspiciatis ab quidem deserunt totam quia hic natus? Deleniti, magni illum enim veniam
+                            cupiditate
+                            doloremque ab architecto.</p>
 
-                            <div class="row">
-                              <span class="read-number ">
-                                <img src="assets/img/Group 548.png" alt=""> 113</span>
-                            </div>
+                          <div class="row">
+                            <span class="read-number ">
+                              <img src="assets/img/Group 548.png" alt=""> 113</span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="card card-small col-md-3 col-12">
+                    <div class="card-body">
+                      <div class="card-content d-flex justify-content-center align-items-center">
+
+                        <div class="small-card-text">
+                          <h3>Research One <img class="research-button" src="assets/img/Group 616.png" alt=""></h3>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem modi! Maxime
+                            voluptatum
+                            perspiciatis ab quidem deserunt totam quia hic natus? Deleniti, magni illum enim veniam
+                            cupiditate
+                            doloremque ab architecto.</p>
+
+                          <div class="row">
+                            <span class="read-number ">
+                              <img src="assets/img/Group 548.png" alt=""> 113</span>
                           </div>
                         </div>
 
                       </div>
+
                     </div>
+                  </div>
 
 
-                    <div class="card card-small col-md-3 col-12">
-                      <div class="card-body">
-                        <div class="card-content d-flex justify-content-center align-items-center">
+                  <div class="card card-small col-md-3 col-12">
+                    <div class="card-body">
+                      <div class="card-content d-flex justify-content-center align-items-center">
 
-                          <div class="small-card-text">
-                            <h3>Research One <img class="research-button" src="assets/img/Group 616.png" alt=""></h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem modi! Maxime
-                              voluptatum
-                              perspiciatis ab quidem deserunt totam quia hic natus? Deleniti, magni illum enim veniam
-                              cupiditate
-                              doloremque ab architecto.</p>
+                        <div class="small-card-text">
+                          <h3>Research One <img class="research-button" src="assets/img/Group 616.png" alt=""></h3>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem modi! Maxime
+                            voluptatum
+                            perspiciatis ab quidem deserunt totam quia hic natus? Deleniti, magni illum enim veniam
+                            cupiditate
+                            doloremque ab architecto.</p>
 
-                            <div class="row">
-                              <span class="read-number ">
-                                <img src="assets/img/Group 548.png" alt=""> 113</span>
-                            </div>
+                          <div class="row">
+                            <span class="read-number ">
+                              <img src="assets/img/Group 548.png" alt=""> 113</span>
                           </div>
-
                         </div>
 
                       </div>
+
                     </div>
-
-
-                    <div class="card card-small col-md-3 col-12">
-                      <div class="card-body">
-                        <div class="card-content d-flex justify-content-center align-items-center">
-
-                          <div class="small-card-text">
-                            <h3>Research One <img class="research-button" src="assets/img/Group 616.png" alt=""></h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, rem modi! Maxime
-                              voluptatum
-                              perspiciatis ab quidem deserunt totam quia hic natus? Deleniti, magni illum enim veniam
-                              cupiditate
-                              doloremque ab architecto.</p>
-
-                            <div class="row">
-                              <span class="read-number ">
-                                <img src="assets/img/Group 548.png" alt=""> 113</span>
-                            </div>
-                          </div>
-
-                        </div>
-
-                      </div>
-                    </div>
+                  </div>
 
 
 
                   <a class="btn col-md-2 col-12 btn-outline-primary " href="results.html">See All</a>
 
-                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
         </div>
       </section>

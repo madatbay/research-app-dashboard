@@ -12,9 +12,8 @@
 }
 
 .table caption a {
-  margin-right: 15px;
   position: absolute;
-  right: 0;
+  right: 15px !important;
   padding: 5px 25px;
 }
 
@@ -59,11 +58,18 @@ body {
 }
 
 #content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 78%;
   min-height: 100vh;
   transition: all 0.3s;
   position: absolute;
   right: 0px;
+}
+
+.mobileContent {
+  width: 95.5% !important;
 }
 
 .login {
@@ -114,9 +120,8 @@ body {
 }
 
 .table caption a {
-  margin-right: 15px;
   position: absolute;
-  right: 0;
+  right: 15px !important;
   padding: 5px 25px;
 }
 
@@ -161,6 +166,9 @@ body {
 }
 
 #content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 78%;
   min-height: 100vh;
   transition: all 0.3s;
@@ -168,8 +176,13 @@ body {
   right: 0px;
 }
 
+.mobileContent {
+  width: 95.5% !important;
+}
+
 .users {
-  width: 95% !important;
+  width: 100%;
+  padding-left: 25px;
 }
 
 .navbar-btn {
@@ -260,8 +273,9 @@ body {
   color: rgba(90, 90, 90, 0.8);
 }
 
-#sidebar ul li a > i {
-  margin: 0 10px;
+#sidebar ul li i {
+  font-size: 15px;
+  margin: 3px;
 }
 
 #sidebar ul li a span {
@@ -352,30 +366,38 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
   #sidebar {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 15%;
+    max-width: 15%;
     text-align: center;
   }
-  #sidebar h2 {
+  #sideH2 {
     display: none;
   }
-  #sidebar span {
+  .sideH2 {
+    display: block !important;
+  }
+  .sideSpan {
+    display: inline-block !important;
+  }
+  #sideSpan {
     display: none;
-  }
-  #sidebar ul.components li {
-    font-size: 10px;
-  }
-  #sidebar ul.components li a {
-    padding: 10px 0;
   }
   #sidebar ul.components li a span {
-    margin-right: 0;
-    display: none;
-    font-size: 10px;
-  }
-  #sidebar ul li > ul {
     display: none;
   }
+}
+
+.mobileActiveMenu {
+  min-width: 40% !important;
+  max-width: 40% !important;
+}
+
+.mobileContent2 {
+  right: -40% !important;
+}
+
+.new-user {
+  width: 90%;
 }
 
 .new-user .card {
@@ -419,9 +441,11 @@ a[data-toggle="collapse"] {
   border-radius: 50%;
 }
 
-.card-big .card-content .card-small .card-icon i {
-  color: #3E64FF;
-  font-size: 30px;
+.card-big .card-content .card-small .card-icon img {
+  max-width: 40px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
 }
 
 .card-big .card-content .card-small .card-title h4 {
@@ -559,8 +583,9 @@ a[data-toggle="collapse"] {
   color: rgba(90, 90, 90, 0.8);
 }
 
-#sidebar ul li a > i {
-  margin: 0 10px;
+#sidebar ul li i {
+  font-size: 15px;
+  margin: 3px;
 }
 
 #sidebar ul li a span {
@@ -651,30 +676,34 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
   #sidebar {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 15%;
+    max-width: 15%;
     text-align: center;
   }
-  #sidebar h2 {
+  #sideH2 {
     display: none;
   }
-  #sidebar span {
+  .sideH2 {
+    display: block !important;
+  }
+  .sideSpan {
+    display: inline-block !important;
+  }
+  #sideSpan {
     display: none;
-  }
-  #sidebar ul.components li {
-    font-size: 10px;
-  }
-  #sidebar ul.components li a {
-    padding: 10px 0;
   }
   #sidebar ul.components li a span {
-    margin-right: 0;
-    display: none;
-    font-size: 10px;
-  }
-  #sidebar ul li > ul {
     display: none;
   }
+}
+
+.mobileActiveMenu {
+  min-width: 40% !important;
+  max-width: 40% !important;
+}
+
+.mobileContent2 {
+  right: -40% !important;
 }
 
 .profileSection {
@@ -688,11 +717,15 @@ a[data-toggle="collapse"] {
 .profile {
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile .profile_form {
   width: 90%;
-  height: 520px;
+  height: auto;
+  overflow: hidden;
   margin: 5% auto;
   border-radius: 2px;
   background-color: #f8f8f8;
@@ -744,7 +777,7 @@ a[data-toggle="collapse"] {
   color: #007bff;
   border-radius: 3px;
   padding: 3px 10px;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .profile .profile_form .save button:focus {
@@ -844,8 +877,9 @@ a[data-toggle="collapse"] {
   color: rgba(90, 90, 90, 0.8);
 }
 
-#sidebar ul li a > i {
-  margin: 0 10px;
+#sidebar ul li i {
+  font-size: 15px;
+  margin: 3px;
 }
 
 #sidebar ul li a span {
@@ -936,30 +970,34 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
   #sidebar {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 15%;
+    max-width: 15%;
     text-align: center;
   }
-  #sidebar h2 {
+  #sideH2 {
     display: none;
   }
-  #sidebar span {
+  .sideH2 {
+    display: block !important;
+  }
+  .sideSpan {
+    display: inline-block !important;
+  }
+  #sideSpan {
     display: none;
-  }
-  #sidebar ul.components li {
-    font-size: 10px;
-  }
-  #sidebar ul.components li a {
-    padding: 10px 0;
   }
   #sidebar ul.components li a span {
-    margin-right: 0;
-    display: none;
-    font-size: 10px;
-  }
-  #sidebar ul li > ul {
     display: none;
   }
+}
+
+.mobileActiveMenu {
+  min-width: 40% !important;
+  max-width: 40% !important;
+}
+
+.mobileContent2 {
+  right: -40% !important;
 }
 
 body {
@@ -1110,7 +1148,11 @@ input {
 }
 
 button {
-  transition: all 1s ease-in-out !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.users {
+  padding-left: 0 !important;
 }
 
 .users div:last-child {
@@ -1128,7 +1170,8 @@ button {
   border: none !important;
 }
 
-.table td, .table th {
+.table td,
+.table th {
   text-align: center;
   vertical-align: middle;
   height: 40px;
@@ -1234,8 +1277,9 @@ button {
   color: rgba(90, 90, 90, 0.8);
 }
 
-#sidebar ul li a > i {
-  margin: 0 10px;
+#sidebar ul li i {
+  font-size: 15px;
+  margin: 3px;
 }
 
 #sidebar ul li a span {
@@ -1326,30 +1370,34 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
   #sidebar {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 15%;
+    max-width: 15%;
     text-align: center;
   }
-  #sidebar h2 {
+  #sideH2 {
     display: none;
   }
-  #sidebar span {
+  .sideH2 {
+    display: block !important;
+  }
+  .sideSpan {
+    display: inline-block !important;
+  }
+  #sideSpan {
     display: none;
-  }
-  #sidebar ul.components li {
-    font-size: 10px;
-  }
-  #sidebar ul.components li a {
-    padding: 10px 0;
   }
   #sidebar ul.components li a span {
-    margin-right: 0;
-    display: none;
-    font-size: 10px;
-  }
-  #sidebar ul li > ul {
     display: none;
   }
+}
+
+.mobileActiveMenu {
+  min-width: 40% !important;
+  max-width: 40% !important;
+}
+
+.mobileContent2 {
+  right: -40% !important;
 }
 
 body {
@@ -1587,8 +1635,9 @@ input {
   color: rgba(90, 90, 90, 0.8);
 }
 
-#sidebar ul li a > i {
-  margin: 0 10px;
+#sidebar ul li i {
+  font-size: 15px;
+  margin: 3px;
 }
 
 #sidebar ul li a span {
@@ -1679,30 +1728,34 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
   #sidebar {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 15%;
+    max-width: 15%;
     text-align: center;
   }
-  #sidebar h2 {
+  #sideH2 {
     display: none;
   }
-  #sidebar span {
+  .sideH2 {
+    display: block !important;
+  }
+  .sideSpan {
+    display: inline-block !important;
+  }
+  #sideSpan {
     display: none;
-  }
-  #sidebar ul.components li {
-    font-size: 10px;
-  }
-  #sidebar ul.components li a {
-    padding: 10px 0;
   }
   #sidebar ul.components li a span {
-    margin-right: 0;
-    display: none;
-    font-size: 10px;
-  }
-  #sidebar ul li > ul {
     display: none;
   }
+}
+
+.mobileActiveMenu {
+  min-width: 40% !important;
+  max-width: 40% !important;
+}
+
+.mobileContent2 {
+  right: -40% !important;
 }
 
 .users-section {
@@ -1797,8 +1850,9 @@ a[data-toggle="collapse"] {
   color: rgba(90, 90, 90, 0.8);
 }
 
-#sidebar ul li a > i {
-  margin: 0 10px;
+#sidebar ul li i {
+  font-size: 15px;
+  margin: 3px;
 }
 
 #sidebar ul li a span {
@@ -1889,30 +1943,34 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
   #sidebar {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 15%;
+    max-width: 15%;
     text-align: center;
   }
-  #sidebar h2 {
+  #sideH2 {
     display: none;
   }
-  #sidebar span {
+  .sideH2 {
+    display: block !important;
+  }
+  .sideSpan {
+    display: inline-block !important;
+  }
+  #sideSpan {
     display: none;
-  }
-  #sidebar ul.components li {
-    font-size: 10px;
-  }
-  #sidebar ul.components li a {
-    padding: 10px 0;
   }
   #sidebar ul.components li a span {
-    margin-right: 0;
-    display: none;
-    font-size: 10px;
-  }
-  #sidebar ul li > ul {
     display: none;
   }
+}
+
+.mobileActiveMenu {
+  min-width: 40% !important;
+  max-width: 40% !important;
+}
+
+.mobileContent2 {
+  right: -40% !important;
 }
 
 body {
@@ -2150,8 +2208,9 @@ input {
   color: rgba(90, 90, 90, 0.8);
 }
 
-#sidebar ul li a > i {
-  margin: 0 10px;
+#sidebar ul li i {
+  font-size: 15px;
+  margin: 3px;
 }
 
 #sidebar ul li a span {
@@ -2242,33 +2301,78 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
   #sidebar {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: 15%;
+    max-width: 15%;
     text-align: center;
   }
-  #sidebar h2 {
+  #sideH2 {
     display: none;
   }
-  #sidebar span {
+  .sideH2 {
+    display: block !important;
+  }
+  .sideSpan {
+    display: inline-block !important;
+  }
+  #sideSpan {
     display: none;
-  }
-  #sidebar ul.components li {
-    font-size: 10px;
-  }
-  #sidebar ul.components li a {
-    padding: 10px 0;
   }
   #sidebar ul.components li a span {
-    margin-right: 0;
-    display: none;
-    font-size: 10px;
-  }
-  #sidebar ul li > ul {
     display: none;
   }
+}
+
+.mobileActiveMenu {
+  min-width: 40% !important;
+  max-width: 40% !important;
+}
+
+.mobileContent2 {
+  right: -40% !important;
 }
 
 .users-section {
   width: 85%;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 576px) {
+  #content {
+    width: 85%;
+  }
+  .profile .profile_form {
+    padding: 40px 0;
+  }
+  .profile .profile_form form div {
+    width: 100%;
+  }
+  .other .btn {
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  #content {
+    width: 90%;
+  }
+  #sidebar {
+    min-width: 10%;
+    max-width: 10%;
+  }
+  .profile .profile_form {
+    padding: 40px 0;
+  }
+  .profile .profile_form form div {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .profile .profile_form {
+    padding: 40px 0;
+  }
+  .profile .profile_form form div {
+    width: 100%;
+  }
 }

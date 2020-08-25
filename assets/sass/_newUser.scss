@@ -1,4 +1,6 @@
 .new-user {
+  width: 90%;
+
   .card {
     background-color: $light-grey;
     @include shadow-box;

@@ -140,7 +140,16 @@ $(".add-button").click(function () {
 });
 
 $("#sidebarCollapse").on("click", function () {
-  $("#sidebar").toggleClass("active");
+  if (screen.width >= 769) {
+    $("#sidebar").toggleClass("active");
+    $("#content").toggleClass("mobileContent");
+  } else if (screen.width <= 768) {
+    $("#sidebar").toggleClass("mobileActiveMenu");
+    $("#sideH2").toggleClass("sideH2");
+    var sideElements = document.querySelectorAll("#sideSpan");
+    $(sideElements).toggleClass("sideSpan");
+    $("#content").toggleClass("mobileContent2");
+  }
 });
 
 $(".users-nav").on("click", function () {
@@ -210,10 +219,9 @@ function confirm() {
   alert("Form uğurla təsdiqləndi");
 }
 
-
 //diger buttonu
 
-$("#other").one("click", function(){
+$("#other").one("click", function () {
   var parent = document.querySelector("#addOther");
   var newLabel = document.createElement("label");
   var newInput = document.createElement("input");
