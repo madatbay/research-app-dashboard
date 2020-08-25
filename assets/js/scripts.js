@@ -221,25 +221,25 @@ function confirm() {
 
 //diger buttonu
 
-$("#other").one("click", function () {
+function addOther () {
   var parent = document.querySelector("#addOther");
-  var newLabel = document.createElement("label");
-  var newInput = document.createElement("input");
-  newLabel.className = "newLabelClass";
-  newInput.className = "addOtherClass";
-  newInput.type = "text";
-  newLabel.appendChild(document.createTextNode("Digər"));
-  newLabel.appendChild(newInput);
-  parent.appendChild(newLabel);
-});
+  if(!parent.childNodes[0]){
+    var newLabel = document.createElement("label");
+    var newInput = document.createElement("input");
+    newLabel.className = "newLabelClass";
+    newInput.className = "addOtherClass";
+    newInput.type = "text";
+    newLabel.appendChild(document.createTextNode("Digər"));
+    newLabel.appendChild(newInput);
+    parent.appendChild(newLabel);
+  }
+};
 
 // Remove other button
 function removeOther() {
   var other = document.getElementById("addOther");
-  try {
-    other.removeChild(other.childNodes[0]);
-  } catch (error) {
-    console.log("Unable to delete node");
+  if(other.childNodes[0]){
+    other.removeChild(other.childNodes[0])
   }
 }
 
@@ -248,13 +248,13 @@ function removeOther() {
 function addSelect() {
   var activeType = document.getElementsByClassName("box");
   let other = document.getElementsByClassName("digertype");
-  for (let o = 0; o < other.length; o++) {
-    try {
-      other[o].parentElement.remove();
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // for (let o = 0; o < other.length; o++) {
+  //   try {
+  //     other[o].parentElement.remove();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   for (let i = 0; i < activeType.length; i++) {
     if (activeType[i].style.display == "block") {
