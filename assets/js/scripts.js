@@ -233,6 +233,16 @@ $("#other").one("click", function () {
   parent.appendChild(newLabel);
 });
 
+// Remove other button
+function removeOther() {
+  var other = document.getElementById("addOther");
+  try {
+    other.removeChild(other.childNodes[0]);
+  } catch (error) {
+    console.log("Unable to delete node");
+  }
+}
+
 //variant elave et buttonu
 
 function addSelect() {
@@ -280,10 +290,11 @@ function addSelect() {
 function addQuestion() {
   var activeType = document.getElementsByClassName("box");
   var formAdd = document.getElementById("form");
+  var other = document.getElementById("addOther").cloneNode(true);
+  other.removeAttribute("id");
 
   var question = document.getElementById("question-input").cloneNode(true);
   question.removeAttribute("id");
-  console.log(question.value);
   var answers = null;
   for (let i = 0; i < activeType.length; i++) {
     if (activeType[i].style.display == "block") {
@@ -298,4 +309,6 @@ function addQuestion() {
 
   formAdd.appendChild(question);
   formAdd.appendChild(answers);
+  formAdd.appendChild(other);
+  removeOther();
 }
