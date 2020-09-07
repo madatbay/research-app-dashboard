@@ -24,8 +24,8 @@
 
   <div class="wrapper d-flex align-items-stretch">
 
-     <!-- Sidebar -->
-     <nav id="sidebar" class="d-flex justify-content-around flex-column ">
+    <!-- Sidebar -->
+    <nav id="sidebar">
 
       <button type="button" id="sidebarCollapse" class="btn btn-outline-primary btn-lg text-right">
         <i class="fa fa-bars"></i>
@@ -34,50 +34,51 @@
 
 
       <div class="username d-flex align-items-center flex-column justify-content-center">
-        <h2 class="text-center">
+        <h2 class="text-center" id="sideH2">
           Mammadova Leyla
         </h2>
         <p class="badge badge-secondary">Admin</p>
       </div>
 
       <ul class="list-unstyled components align-self-center d-flex flex-column">
-        <li >
-          <a href="mainPage.html"> <i class="fas fa-rocket"></i> <span>Dashboard</span> </a>
+        <li class="">
+          <a href="mainPage.html"><i class="fas fa-rocket"></i> <span id="sideSpan">Dashboard</span> </a>
         </li>
         <li>
-          <a href="#" class="users-nav"><i class="fas fa-users"></i>  <span> İstifadəçilər</span></a>
-          <ul class=" list-unstyled active dropdown  align-items-center d-flex flex-column">
-            <li > <a href="allUsers.html"><i class="fas fa-users-cog"></i> <span>Bütün</span></a></li>
-            <li><a href="newUser.html"><i class="fas fa-user-plus"></i> <span>Yarat</span></a></li>
+          <a href="#" class="users-nav"><i class="fas fa-users"></i> <span id="sideSpan">
+              İstifadəçilər</span></a>
+          <ul class=" list-unstyled active dropdown align-items-center d-flex flex-column">
+            <li> <a href="allUsers.html"><i class="fas fa-users-cog"></i> <span id="sideSpan">Bütün</span></a></li>
+            <li><a href="newUser.html"><i class="fas fa-user-plus"></i> <span id="sideSpan">Yarat</span></a></li>
 
           </ul>
         </li>
         <li>
-          <a href="#" class="surveys"><i class="fas fa-file"></i> <span> Sorğular</span></a>
+          <a href="#" class="surveys"><i class="fas fa-file-alt"></i> <span id="sideSpan">
+              Sorğular</span></a>
           <ul class=" list-unstyled active  align-items-center d-flex flex-column">
-            <li class="active"> <a href="allQueries.html"><i class="fas fa-file-alt"></i>  <span>Bütün</span></a></li>
-            <li><a href="newform.html"> <i class="far fa-file"></i> <span>Yarat</span></a></li>
+            <li class="active"> <a href="allQueries.html"><i class="fas fa-file"></i> <span
+                  id="sideSpan">Bütün</span></a></li>
+            <li><a href="newform.html"><i class="fas fa-file-alt"></i> <span id="sideSpan">Yarat</span></a></li>
 
           </ul>
         </li>
 
         <li>
 
-          <a href="./profile.html"><i class="fas fa-cog"></i> <span>Parametrlər </span> </a>
+          <a href="./profile.html"><i class="fas fa-cog"></i> <span id="sideSpan">Parametrlər </span>
+          </a>
         </li>
 
       </ul>
       <div class="footer text-center">
-        <a href="./index.html">
-          <i class="fas fa-sign-out-alt"></i>
-        <span>Profildən çıxış</span></a>
+        <a href="./mainPage.html"><i class="fas fa-sign-out-alt"></i> <span id="sideSpan">Profildən
+            çıxış</span></a>
       </div>
 
     </nav>
-
     <div id="content" class="">
-
-
+      <div class="mobileMenuIcon"><i class="fa fa-bars"></i></div>
       <section class="users min-vh-100 d-flex align-items-center justify-content-center my-4">
         <div class="container">
           <div class="row">

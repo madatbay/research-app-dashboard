@@ -91,3 +91,28 @@ body {
 .mobileContent {
   width: 95.5% !important;
 }
+
+.mobileMenuIcon {
+  display: none;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  top:0;
+  text-align: right;
+  padding: 5px 15px;
+  font-size: 25px;
+  color: #007bff;
+  left: 0;
+  cursor: pointer;
+}
+.mobileMenu {
+  display: flex !important;
+}
+@media only screen and (max-width:768px) {
+  #content {
+    width: 100% !important;
+  }
+  .mobileMenuIcon {
+    display: block;
+  }
+}

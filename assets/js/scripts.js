@@ -127,12 +127,18 @@ $(".save-delete-button").click(function () {
   alert("Dəyişikliklər qeyd olundu");
 });
 
+
+
 $(".delete-button").click(function () {
   $("#delete-modal").modal("show");
 });
 
 $(".remove-button").click(function () {
   $("#remove-modal").modal("show");
+});
+
+$(".reset-button").click(function () {
+  $("#reset-modal").modal("show");
 });
 
 $(".add-button").click(function () {
@@ -143,13 +149,18 @@ $("#sidebarCollapse").on("click", function () {
   if (screen.width >= 769) {
     $("#sidebar").toggleClass("active");
     $("#content").toggleClass("mobileContent");
-  } else if (screen.width <= 768) {
-    $("#sidebar").toggleClass("mobileActiveMenu");
-    $("#sideH2").toggleClass("sideH2");
-    var sideElements = document.querySelectorAll("#sideSpan");
-    $(sideElements).toggleClass("sideSpan");
-    $("#content").toggleClass("mobileContent2");
-  }
+  } 
+});
+
+$(".mobileMenuIcon").on("click", function () {
+    $("#sidebar").toggleClass("mobileMenu");
+    if($("#sidebar").css("display")=="flex")
+    {
+        $("html").css("overflow","hidden");
+    }
+    else {
+        $("html").css("overflow","auto");
+    }
 });
 
 $(".users-nav").on("click", function () {
@@ -208,11 +219,6 @@ $(document).ready(function () {
     alert("Məlumatlar uğurla yadda saxlanıldı");
   });
 });
-//addInfo function in newForm page
-
-function addInfo() {
-  alert("Məlumatlar uğurla yadda saxlanıldı");
-}
 
 //tesdiqle
 function confirm() {
@@ -221,40 +227,30 @@ function confirm() {
 
 //diger buttonu
 
-function addOther () {
+$("#other").one("click", function () {
   var parent = document.querySelector("#addOther");
-  if(!parent.childNodes[0]){
-    var newLabel = document.createElement("label");
-    var newInput = document.createElement("input");
-    newLabel.className = "newLabelClass";
-    newInput.className = "addOtherClass";
-    newInput.type = "text";
-    newLabel.appendChild(document.createTextNode("Digər"));
-    newLabel.appendChild(newInput);
-    parent.appendChild(newLabel);
-  }
-};
-
-// Remove other button
-function removeOther() {
-  var other = document.getElementById("addOther");
-  if(other.childNodes[0]){
-    other.removeChild(other.childNodes[0])
-  }
-}
+  var newLabel = document.createElement("label");
+  var newInput = document.createElement("input");
+  newLabel.className = "newLabelClass";
+  newInput.className = "addOtherClass";
+  newInput.type = "text";
+  newLabel.appendChild(document.createTextNode("Digər"));
+  newLabel.appendChild(newInput);
+  parent.appendChild(newLabel);
+});
 
 //variant elave et buttonu
 
 function addSelect() {
   var activeType = document.getElementsByClassName("box");
   let other = document.getElementsByClassName("digertype");
-  // for (let o = 0; o < other.length; o++) {
-  //   try {
-  //     other[o].parentElement.remove();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
+  for (let o = 0; o < other.length; o++) {
+    try {
+      other[o].parentElement.remove();
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   for (let i = 0; i < activeType.length; i++) {
     if (activeType[i].style.display == "block") {
@@ -290,11 +286,11 @@ function addSelect() {
 function addQuestion() {
   var activeType = document.getElementsByClassName("box");
   var formAdd = document.getElementById("form");
-  var other = document.getElementById("addOther").cloneNode(true);
-  other.removeAttribute("id");
-
+  var formDelete = document.getElementById("deleteForm");
   var question = document.getElementById("question-input").cloneNode(true);
   question.removeAttribute("id");
+
+  console.log(question.value);
   var answers = null;
   for (let i = 0; i < activeType.length; i++) {
     if (activeType[i].style.display == "block") {
@@ -309,6 +305,22 @@ function addQuestion() {
 
   formAdd.appendChild(question);
   formAdd.appendChild(answers);
-  formAdd.appendChild(other);
-  removeOther();
+  formAdd.appendChild(formDelete);
+}
+
+
+
+$("#deleteForm").click(function () {
+  $(this).parent().remove(); 
+
+});
+
+//forms wth one sumbit button
+
+submitForms = function(){
+
+  alert("Məlumatlar uğurla yadda saxlanıldı");
+  document.getElementById("form").submit();
+  document.getElementById("question-section").submit();
+  
 }

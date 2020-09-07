@@ -13,7 +13,9 @@
 }
 
 #sidebar {
-
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
   width: 22%;
   position: fixed;
   top: 0;
@@ -43,10 +45,6 @@
   display: none;
 }
 
-#sidebar.active ul.components li {
-  font-size: 10px;
-}
-
 #sidebar.active ul.components li a {
   padding: 10px 0;
 }
@@ -54,7 +52,6 @@
 #sidebar.active ul.components li a span {
   margin-right: 0;
   display: none;
-  font-size: 10px;
 }
 
 #sidebar.active ul li>ul {
@@ -94,20 +91,14 @@
   color: rgba($color: $medium-grey, $alpha: 0.8);
 }
 
-#sidebar ul li i {
-font-size: 15px;
-  margin: 3px;
- 
+#sidebar ul li img {
+  width: 20px;
+  height: auto;
+  margin: 5px;
 }
 
 #sidebar ul li a span {
   margin-right: 15px;
-}
-
-@media (max-width: 991.98px) {
-  #sidebar ul li a span {
-    display: block;
-  }
 }
 
 #sidebar ul li a:hover {
@@ -122,18 +113,6 @@ font-size: 15px;
   background-color: #e0f3ff;
 }
 
-@media (max-width: 1020.98px) {
-  #sidebar {
-    min-width: 200px;
-    max-width: 200px;
-    text-align: center;
-  }
-
-  #sidebar.active {
-    margin-left: 0 !important;
-  }
-}
-
 a[data-toggle="collapse"] {
   position: relative;
 }
@@ -146,12 +125,6 @@ a[data-toggle="collapse"] {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-
-@media (max-width: 991.98px) {
-  #sidebarCollapse span {
-    display: none;
-  }
 }
 
 .footer {
@@ -196,38 +169,18 @@ a[data-toggle="collapse"] {
 @media (max-width: 768px) {
 
   #sidebar {
-    min-width: 15%;
-    max-width: 15%;
-    text-align: center;
-  }
-
-  #sideH2 {
+    width: 100%;
+    top: 43px;
+    display: none;
+  } 
+  #sidebarCollapse {
     display: none;
   }
-
-  .sideH2 {
-    display: block !important;
+  #sidebar ul li {
+    font-size: 22px;
   }
-
-  .sideSpan {
-    display: inline-block !important;
+  
+  #sidebar ul li>ul li {
+    font-size: 16px;
   }
-
-  #sideSpan {
-    display: none;
-  }
-
-  #sidebar ul.components li a span {
-    display: none;
-  }
-
-}
-
-.mobileActiveMenu {
-  min-width: 40% !important;
-  max-width: 40% !important;
-}
-
-.mobileContent2 {
-  right: -40% !important;
 }
