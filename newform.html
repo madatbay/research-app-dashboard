@@ -56,9 +56,9 @@
           <a href="#" class="surveys"><i class="fas fa-file"></i> <span id="sideSpan">
               Sorğular</span></a>
           <ul class=" list-unstyled active  align-items-center d-flex flex-column">
-            <li class="active"> <a href="allQueries.html"><i class="fas fa-file-alt"></i> <span
+            <li > <a href="allQueries.html"><i class="fas fa-file-alt"></i> <span
                   id="sideSpan">Bütün</span></a></li>
-            <li><a href="newform.html"><i class="fas fa-file"></i> <span id="sideSpan">Yarat</span></a></li>
+            <li class="active"><a href="newform.html"><i class="fas fa-file"></i> <span id="sideSpan">Yarat</span></a></li>
 
           </ul>
         </li>
@@ -89,14 +89,16 @@
                   <p class="title">
                     <input type="text" placeholder="Form başlığı" required id="title">
                   </p>
-                  <p class="description">
+                  <p class="description" id="descc">
                     <input type="text" required placeholder="Açıqlama" id="description">
                   </p>
                 </form>
-                <form action="" id="question-section">
+                <form id="addQstn" name="qstnForm"></form>
+                <div id="lineBwQstn"></div>
+                <form id="question-section" class="template">
                   <p class="question" id="question">
-                    <input type="text" required placeholder="İlk sualımız budur ki,..."
-                      value="İlk sualımız budur ki,..." id="question-input">
+                    <input type="text" class="templateInput" required placeholder="İlk sualımız budur ki,..."
+                      id="question-input">
                   </p>
 
                   
@@ -104,40 +106,53 @@
                     <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
                     <option value="check" class="tablinks">Checkbox <i class="fa fa-angle-down"></i></option>
                     <option value="open" class="tablinks">Open <i class="fa fa-angle-down"></i></option>
+                    <option value="email" class="tablinks">Email <i class="fa fa-angle-down"></i></option>
+                    <option value="date" class="tablinks">Date <i class="fa fa-angle-down"></i></option>
                   </select>
                   
                   <div class="radiosection tabcontent radio box" id="Radio">
-                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                    <label><input type="radio" name="rad" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
-                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                    <label><input type="radio" name="rad" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
-                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                    <label><input type="radio" name="rad" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
-                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                    <label><input type="radio" name="rad" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
                         
                        
                   </div>
                   <div class="checksection tabcontent check box" id="Check">
-                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                    <label><input type="checkbox" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
-                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                    <label><input type="checkbox" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
-                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                    <label><input type="checkbox" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
-                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                    <label><input type="checkbox" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
                        
                   </div>
                   <div class="opensection tabcontent open box" id="Open">
                     <label>
-                      Cavab <input class="openAnswer" type="text" />
+                      Cavab <input class="openAnswer templateAnsw" type="text" />
                     </label>
 
-                 
                   </div>
 
-                  <button type="button" id="deleteForm" class=" btn btn-outline-danger">Sil</button>
+                  <div class="emailsection tabcontent email box" id="Email" style="padding-left: 10px;"><br>
+                    <label>
+                      <input type="email" name="" id="templateEmail" class=" templateAnsw"/>
+                    </label>
+                  </div>
+
+                  <div class="datesection tabcontent date box" id="Date" style="padding-left: 10px;"><br>
+                    <label for="">
+                      <input type="date" name="email" id="templateDate" class=" templateAnsw" required />
+                    </label>
+                  </div>
+
+                <!-- <button type="button" id="deleteForm" class=" btn btn-outline-danger otherbtns"> Sil</button> -->
 
                   
                   <div id="addOther"></div>
@@ -157,7 +172,7 @@
         </div>
         <div class="container close text-right my-4">
           <button type="button" class="btn btn-outline-warning reset-button">Sıfırla</button>
-          <button type="submit" class="btn btn-outline-primary" id="addQuestion" onclick="submitForms()">Əlavə et</button>
+          <button type="submit" class="btn btn-outline-primary" id="addQuestion" onclick="addInfo()">Əlavə et</button>
         </div>
     </div>
     <div id="delete-modal" class="modal" tabindex="-1" role="dialog">
@@ -212,5 +227,6 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/scripts.js"></script>
 </body>
-
+<!--4vxySy9!&%+GqaX?-->
 </html>
+

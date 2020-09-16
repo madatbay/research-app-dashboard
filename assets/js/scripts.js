@@ -219,6 +219,11 @@ $(document).ready(function () {
     alert("Məlumatlar uğurla yadda saxlanıldı");
   });
 });
+//addInfo function in newForm page
+
+function addInfo() {
+  alert("Məlumatlar uğurla yadda saxlanıldı");
+}
 
 //tesdiqle
 function confirm() {
@@ -232,7 +237,9 @@ $("#other").one("click", function () {
   var newLabel = document.createElement("label");
   var newInput = document.createElement("input");
   newLabel.className = "newLabelClass";
+  newLabel.id = "otherid"
   newInput.className = "addOtherClass";
+  newInput.id = "otherTextid"
   newInput.type = "text";
   newLabel.appendChild(document.createTextNode("Digər"));
   newLabel.appendChild(newInput);
@@ -281,46 +288,193 @@ function addSelect() {
   }
 }
 
+
+
 //sual elave et
 
 function addQuestion() {
-  var activeType = document.getElementsByClassName("box");
-  var formAdd = document.getElementById("form");
-  var formDelete = document.getElementById("deleteForm");
-  var question = document.getElementById("question-input").cloneNode(true);
-  question.removeAttribute("id");
+  var formDelete = document.createElement('BUTTON');
+  var text = document.createTextNode("Sil"); 
+  formDelete.appendChild(text); 
+  formDelete.setAttribute("id","deleteForm");
+  formDelete.setAttribute("type","button")
+  formDelete.setAttribute("class","btn btn-outline-danger");
+  formDelete.setAttribute("onclick","deleteBtn(this)");
 
-  console.log(question.value);
+  var activeType = document.getElementsByClassName("box");
+  var formAdd = document.getElementById("addQstn");
+  
+  
+ 
+  var question = document.getElementById("question-input").cloneNode(true);
+
+  question.removeAttribute("id");
+  question.setAttribute("id", "deleteQstn");
+
+  console.log(question.value); 
   var answers = null;
   for (let i = 0; i < activeType.length; i++) {
     if (activeType[i].style.display == "block") {
       try {
         answers = activeType[i].cloneNode(true);
         answers.classList.remove("box");
+        answers.setAttribute("id","deleteAnsw")
       } catch (error) {
         console.log(error);
       }
     }
   }
 
+  var other = document.getElementById("otherid");
+  console.log(other)
+  if($(other).length !== 0){
+    var otherType = document.getElementById("otherid").cloneNode(true);
+    otherType.removeAttribute("id");
+  }
+  else{
+    // alert("2")
+  }
+  linebreak = document.createElement("br");
+  
+   /**********************COUNT************* */
+ 
+
+
+
   formAdd.appendChild(question);
   formAdd.appendChild(answers);
+  if($(other).length !== 0){
+      formAdd.appendChild(otherType)
+  }
   formAdd.appendChild(formDelete);
+  formAdd.appendChild(linebreak);
+
+  var form = document.forms["qstnForm"];
+  var inputs = form.querySelectorAll("input#deleteQstn");
+
+
+
+
+
+  // console.log(inputs.length)
+    for (var i = 1; i <= inputs.length; i++) {
+      var span = document.createElement('span');
+      // console.log(i)
+     inputs.toString();
+     console.log(inputs.html)
+     output = inputs[i];
+     console.log(output)
+     var content = document.createTextNode(output);
+     span.appendChild(content);
+     console.log(content)
+     var before = document.querySelector("#addQstn.templateInput");
+     document.body.insertBefore(span, before)
+    //   inputs[i].parentNode.insertBefore(span, inputs[i].nextElementSibling)
+    //   // (function (index) {
+    //   //     span.innerHTML = index;
+    //   //     console.log(inputs[index])  
+    //   //     console.log(span)
+    //   //     if (inputs[index].nextElementSibling.tagName !== 'SPAN')
+    //   //     inputs[index].parentNode.insertBefore(span, inputs[index].nextElementSibling)
+    //   // })(i);
+
+    }
+  
+
+
+  /********************************Delete after adding************ */
+
+  document.getElementById("question-input").value = "";
+    $('input.templateAnsw').each(function(){
+        $(this).val('');
+    }); 
+  document.getElementById("question-section").querySelectorAll(".templateAnsw").value = "";
+  document.getElementById("question-section").querySelector("#addOther").innerHTML = "";
+  document.getElementById("question-section").querySelector("#templateEmail").value = "";
+
+/******************after add read only questions************ */
+
+  var form = document.getElementById("addQstn");
+var elements = form.elements;
+for (var i = 0, len = elements.length; i < len; ++i) {
+    elements[i].readOnly = true;
+}
+
+  /*****************************Add other variant***************** */
+
+  $("#other").one("click", function () {
+    var parent = document.querySelector("#addOther");
+    var newLabel = document.createElement("label");
+    var newInput = document.createElement("input");
+    newLabel.className = "newLabelClass";
+    newLabel.id = "otherid"
+    newInput.className = "addOtherClass";
+    newInput.id = "otherTextid"
+    newInput.type = "text";
+    newLabel.appendChild(document.createTextNode("Digər"));
+    newLabel.appendChild(newInput);
+    parent.appendChild(newLabel);
+  });
+
 }
 
 
 
-$("#deleteForm").click(function () {
-  $(this).parent().remove(); 
 
-});
+function deleteBtn(element){
+  //  $(element).closest('div').find('label').remove();
+  // $(element).prevUntil("").remove()
+var form = document.getElementById("form");
+var dltbtn = document.getElementById("deleteForm");
+var qstn = document.getElementById("deleteQstn");
+var answ = document.getElementById("deleteAnsw");
 
-//forms wth one sumbit button
+  // var elementType = $(element).prevUntil(desc).prop('nodeName');
+  // console.log(elementType)
+console.log(form)
 
-submitForms = function(){
 
-  alert("Məlumatlar uğurla yadda saxlanıldı");
-  document.getElementById("form").submit();
-  document.getElementById("question-section").submit();
+
+var btn= $(element).closest(":has(button)").find('button');
+alert(btn);
+var comparetext = 'Sil'
+if(btn.html().trim() === comparetext){
+  $( element ).prevUntil( btn).remove();
+    $(element).remove()
+  // alert("1")
+}
+else{
+  $( element ).prevUntil( form).remove();
+    dltbtn.remove();
+}
+  // if($(dltbtn).length){
+  //   $( element ).prevUntil( dltbtn).remove();
+  //   dltbtn.remove()
+  // }
+  // else{
+  //   $( element ).prevUntil( form).remove();
+  //   dltbtn.remove();
+  // }
+    
+  // }
+
+  
+  // $(element).remove()
+
   
 }
+// $("#deleteForm").click(function () {
+//   $(this).parent().remove(); 
+
+// });
+
+
+//******************************COUNTER********************** */
+
+// var count = 0;
+// var countButton = document.getElementById("countButton");
+// var displayCount = document.getElementById("displayCount");
+// countButton.onclick = function(){
+//   count++;
+//   displayCount.innerHTML = count;
+// }
