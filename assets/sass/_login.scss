@@ -1,4 +1,5 @@
 @import "common";
+
 .login {
   background-size: cover;
   height: 100%;
@@ -6,6 +7,7 @@
   .card {
     @include shadow-box;
     background-color: white;
+
     .card-body {
       .card-title {
         h5 {
@@ -15,6 +17,7 @@
         }
       }
     }
+
     .card-content {
       label {
         font-size: 15px;
@@ -35,4 +38,3 @@
     font-size: 20px;
   }
 }
-

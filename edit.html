@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Light Group</title>
+  <title>Edit</title>
   <!-- Bootstrap Styles-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
@@ -30,16 +30,18 @@
 <body>
   <div class="newform wrapper d-flex align-items-stretch">
     <!-- Sidebar -->
-    <nav id="sidebar" class="d-flex justify-content-around flex-column ">
+    <nav id="sidebar">
 
-      <button type="button" id="sidebarCollapse" class="btn btn-outline-primary btn-lg text-right">
-        <i class="fa fa-bars"></i>
-        <span class="sr-only">Toggle Menu</span>
-      </button>
+      <div class="sidebarbutton">
+        <button type="button" id="sidebarCollapse" class="btn btn-outline-primary btn-lg text-right">
+          <i class="fa fa-bars"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+  </div>
 
 
       <div class="username d-flex align-items-center flex-column justify-content-center">
-        <h2 class="text-center">
+        <h2 class="text-center" id="sideH2">
           Mammadova Leyla
         </h2>
         <p class="badge badge-secondary">Admin</p>
@@ -47,39 +49,44 @@
 
       <ul class="list-unstyled components align-self-center d-flex flex-column">
         <li class="">
-          <a href="mainPage.html"> <img src="assets/img/shuttle.png" alt=""> <span>Dashboard</span> </a>
+          <a href="mainPage.html"><i class="fas fa-rocket"></i> <span id="sideSpan">Dashboard</span> </a>
         </li>
         <li>
-          <a href="#" class="users-nav"> <img src="assets/img/Path 591.png" alt=""> <span> İstifadəçilər</span></a>
+          <a href="#" class="users-nav"><i class="fas fa-users"></i> <span id="sideSpan">
+              İstifadəçilər</span></a>
           <ul class=" list-unstyled active dropdown align-items-center d-flex flex-column">
-            <li> <a href="allUsers.html"><span>Bütün</span></a></li>
-            <li><a href="newUser.html"><span>Yarat</span></a></li>
+            <li> <a href="allUsers.html"><i class="fas fa-users-cog"></i> <span id="sideSpan">Bütün</span></a></li>
+            <li><a href="newUser.html"><i class="fas fa-user-plus"></i> <span id="sideSpan">Yarat</span></a></li>
 
           </ul>
         </li>
         <li>
-          <a href="#" class="surveys"> <img src="assets/img/google-forms.png" alt=""> <span> Sorğular</span></a>
+          <a href="#" class="surveys"><i class="fas fa-file-alt"></i> <span id="sideSpan">
+              Sorğular</span></a>
           <ul class=" list-unstyled active  align-items-center d-flex flex-column">
-            <li class="active"> <a href="allQueries.html"><span>Bütün</span></a></li>
-            <li><a href="newform.html"><span>Yarat</span></a></li>
+            <li class="active"> <a href="allQueries.html"><i class="fas fa-file-alt"></i> <span
+                  id="sideSpan">Bütün</span></a></li>
+            <li><a href="newform.html"><i class="fas fa-file"></i> <span id="sideSpan">Yarat</span></a></li>
 
           </ul>
         </li>
 
         <li>
 
-          <a href="profile.html"> <img src="assets/img/Group 375.png" alt=""> <span>Parametrlər </span> </a>
+          <a href="./profile.html"><i class="fas fa-cog"></i> <span id="sideSpan">Parametrlər </span>
+          </a>
         </li>
 
       </ul>
       <div class="footer text-center">
-        <a href="./mainPage.html"><img src="assets/img/logout.png" alt=""> <span>Profildən çıxış</span></a>
+        <a href="./mainPage.html"><i class="fas fa-sign-out-alt"></i> <span id="sideSpan">Profildən
+            çıxış</span></a>
       </div>
 
     </nav>
-
     <div id="content">
-      <section class="users-section min-vh-100 d-flex align-items-center justify-content-center">
+      <div class="mobileMenuIcon"><i class="fa fa-bars"></i></div>
+      <section class="users-section min-vh-100 d-flex align-items-center justify-content-center py-4">
         <div class="container form_container mt-5">
           <div class="row">
             <div class="col-12">
@@ -124,40 +131,50 @@
                   </div>
                   <br><br><br><br><br><br><br><br>
                 </form>
-                  <form id="question-section">
-                    <p class="question" id="question">
-                      <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual" id="question-input">
-                    </p>
-                    <select id="chooseSelect">
-                      <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
-                      <option value="check" class="tablinks">Checkbox <i class="fa fa-angle-down"></i></option>
-                      <option value="open" class="tablinks">Open <i class="fa fa-angle-down"></i></option>
-                    </select>
-                    <div class="radiosection tabcontent radio box" id="Radio">
-                      <label><input type="radio" name="rad" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
-                      <label><input type="radio" name="rad" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
-                      <label><input type="radio" name="rad" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
-                      <label><input type="radio" name="rad" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
-                    </div>
-                    <div class="checksection tabcontent check box" id="Check">
-                      <label><input type="checkbox" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
-                      <label><input type="checkbox" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
-                      <label><input type="checkbox" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
-                      <label><input type="checkbox" id="" /><input class="text" type="text" value="Birinci cavab"></label><br />
-                    </div>
-                    <div class="opensection tabcontent open box" id="Open">
-                      <label>
-                        Cavab <input class="openAnswer" type="text" />
-                      </label>
-                    </div>
-                    <div id="addOther"></div>
-                    <div class="other text-right pb-5 px-3" id="func-buttons">
-                      <button type="button" class="btn btn-link" id="other">Digər...</button>
-                      <button type="button" class="btn btn-outline-primary" onclick="addQuestion()">Sual əlavə et</button>
-                      <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə et</button>
-                      <button type="button" class="delete-button btn btn-outline-danger">Sil</button>
-                    </div>
-                  </form>
+                <form id="question-section">
+                  <p class="question" id="question">
+                    <input type="text" required placeholder="İlk sualımız budur ki,..." value="Nümunə sual"
+                      id="question-input">
+                  </p>
+                  <select id="chooseSelect">
+                    <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
+                    <option value="check" class="tablinks">Checkbox <i class="fa fa-angle-down"></i></option>
+                    <option value="open" class="tablinks">Open <i class="fa fa-angle-down"></i></option>
+                  </select>
+                  <div class="radiosection tabcontent radio box" id="Radio">
+                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                        placeholder="Birinci cavab"></label><br />
+                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                        placeholder="Birinci cavab"></label><br />
+                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                        placeholder="Birinci cavab"></label><br />
+                    <label><input type="radio" name="rad" id="" /><input class="text" type="text"
+                        placeholder="Birinci cavab"></label><br />
+                  </div>
+                  <div class="checksection tabcontent check box" id="Check">
+                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                        placeholder="Birinci cavab"></label><br />
+                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                        placeholder="Birinci cavab"></label><br />
+                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                        placeholder="Birinci cavab"></label><br />
+                    <label><input type="checkbox" id="" /><input class="text" type="text"
+                        placeholder="Birinci cavab"></label><br />
+                  </div>
+                  <div class="opensection tabcontent open box" id="Open">
+                    <label>
+                      Cavab <input class="openAnswer" type="text" />
+                    </label>
+                  </div>
+                  <div id="addOther"></div>
+                  <div class="other text-right pb-5 px-3" id="func-buttons">
+                    <button type="button" class="btn btn-link" id="other">Digər...</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="addQuestion()">Sual əlavə et</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə
+                      et</button>
+                    <button type="button" class="delete-button btn btn-outline-danger">Sil</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
