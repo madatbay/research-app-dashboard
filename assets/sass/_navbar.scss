@@ -133,6 +133,9 @@ a[data-toggle="collapse"] {
 
 #sidebarCollapse {
   border: none;
+
+float: right;
+
 }
 
 .username {
@@ -172,6 +175,7 @@ a[data-toggle="collapse"] {
     width: 100%;
     top: 43px;
     display: none;
+  
   } 
   #sidebarCollapse {
     display: none;
@@ -182,5 +186,9 @@ a[data-toggle="collapse"] {
   
   #sidebar ul li>ul li {
     font-size: 16px;
+  }
+
+  section{
+    margin-top: 43px;
   }
 }

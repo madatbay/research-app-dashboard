@@ -513,3 +513,23 @@ var comparetext = 'Sil'
 //   count++;
 //   displayCount.innerHTML = count;
 // }
+
+
+//select all checkboxes
+$("#select-all").change(function(){  
+	var status = this.checked; 
+  $(':checkbox').each(function(){ 
+		this.checked = status; 
+	});
+});
+
+$(':checkbox').change(function(){ 
+	if(this.checked == false){ 
+		$("#select-all")[0].checked = false; 
+	}
+	
+	//check "select all" if all checkbox items are checked
+  if ($(':checkbox:checked').length == $(':checkbox').length-1) { 
+		$("#select-all")[0].checked = true; 
+	}
+});
