@@ -104,6 +104,20 @@ $(document).ready(function () {
     .change();
 });
 
+
+function notShowBtns(){
+  //This data i get from DB
+ //now i need to select option in select.
+ console.log($('#chooseSelect').val());
+ if($('#chooseSelect').val() === "open" || $('#chooseSelect').val() === "email" || $('#chooseSelect').val() === "date"){
+   var addVrntBtn = document.getElementById("addVrnt");
+   var addOtherBtn = document.getElementById("other")
+   addVrntBtn.remove();
+   addOtherBtn.remove()
+
+ }
+}
+
 // Create a new password
 $(".input-group-append").click(function () {
   var field = $(this).closest("div").find('input[rel="gp"]');
@@ -226,7 +240,7 @@ function addInfo() {
 }
 
 //tesdiqle
-function confirm() {
+function confirmForm() {
   alert("Form uğurla təsdiqləndi");
 }
 
@@ -269,9 +283,11 @@ function addSelect() {
         "type",
         activeType[i].childNodes[1].childNodes[0].type
       );
+      elemType.id = "newVariantType"
       elemText.setAttribute("type", "text");
       elemText.className = "text";
-      elemText.value = "Yeni Variant";
+      elemText.id = "newVariantText"
+      elemText.placeholder = "Yeni Variant";
       activeType[i].appendChild(newLabel);
       newLabel.appendChild(elemType);
       newLabel.appendChild(elemText);
@@ -279,13 +295,13 @@ function addSelect() {
     }
   }
 
-  for (let i = 0; i < activeType.length; i++) {
-    if (activeType[i].style.display == "block") {
-      newLabel.appendChild(document.createTextNode("Digər"));
-      newLabel.appendChild(newInput);
-      activeType[i].appendChild(newLabel);
-    }
-  }
+  // for (let i = 0; i < activeType.length; i++) {
+  //   if (activeType[i].style.display == "block") {
+  //     newLabel.appendChild(document.createTextNode("Digər"));
+  //     newLabel.appendChild(newInput);
+  //     activeType[i].appendChild(newLabel);
+  //   }
+  // }
 }
 
 
@@ -357,18 +373,21 @@ function addQuestion() {
 
 
   // console.log(inputs.length)
-    for (var i = 1; i <= inputs.length; i++) {
-      var span = document.createElement('span');
-      // console.log(i)
-     inputs.toString();
-     console.log(inputs.html)
-     output = inputs[i];
-     console.log(output)
-     var content = document.createTextNode(output);
-     span.appendChild(content);
-     console.log(content)
-     var before = document.querySelector("#addQstn.templateInput");
-     document.body.insertBefore(span, before)
+  /////////////////////////////////////////////////////
+    // for (var i = 1; i <= inputs.length; i++) {
+    //   var span = document.createElement('span');
+    //   // console.log(i)
+    //  inputs.toString();
+    //  console.log(inputs.html)
+    //  output = inputs[i];
+    //  console.log(output)
+    //  var content = document.createTextNode(output);
+    //  span.appendChild(content);
+    //  console.log(content)
+    //  var before = document.querySelector("#addQstn.templateInput");
+    //  document.body.insertBefore(span, before)
+    // }
+////////////////////////////////////////////////////////////////
     //   inputs[i].parentNode.insertBefore(span, inputs[i].nextElementSibling)
     //   // (function (index) {
     //   //     span.innerHTML = index;
@@ -378,18 +397,32 @@ function addQuestion() {
     //   //     inputs[index].parentNode.insertBefore(span, inputs[index].nextElementSibling)
     //   // })(i);
 
-    }
+    
   
 
 
   /********************************Delete after adding************ */
 
   document.getElementById("question-input").value = "";
-    $('input.templateAnsw').each(function(){
-        $(this).val('');
-    }); 
-  document.getElementById("question-section").querySelectorAll(".templateAnsw").value = "";
-  document.getElementById("question-section").querySelector("#addOther").innerHTML = "";
+    // $('input.templateAnsw').each(function(){
+    //     $(this).val('');
+    // }); 
+    var variants = document.getElementById("question-section").querySelectorAll(".templateAnsw");
+  for(i = 0; i < variants.length; i++) {
+    variants[i].value = ""
+  }
+
+  var newAddedVariant = document.getElementById("question-section").querySelectorAll("#newAddedLabel");
+  for(i = 0; i < newAddedVariant.length; i++) {
+    newAddedVariant[i].remove()
+  }
+  
+  var newAddedBreak = document.getElementById("question-section").querySelectorAll("#newAddedBr");
+  for(i = 0; i < newAddedBreak.length; i++) {
+    newAddedBreak[i].remove()
+  }
+
+ document.getElementById("question-section").querySelector("#addOther").innerHTML = "";
   document.getElementById("question-section").querySelector("#templateEmail").value = "";
 
 /******************after add read only questions************ */
@@ -436,16 +469,18 @@ console.log(form)
 
 
 var btn= $(element).closest(":has(button)").find('button');
-alert(btn);
+
 var comparetext = 'Sil'
-if(btn.html().trim() === comparetext){
-  $( element ).prevUntil( btn).remove();
-    $(element).remove()
-  // alert("1")
-}
-else{
-  $( element ).prevUntil( form).remove();
-    dltbtn.remove();
+ if(confirm("Bu sualı silmək istədiyinizdən əminsinizmi?")){
+  if(btn.html().trim() === comparetext){
+    $( element ).prevUntil( btn).remove();
+      $(element).remove()
+    // alert("1")
+  }
+  else{
+    $( element ).prevUntil( form).remove();
+      dltbtn.remove();
+  }
 }
   // if($(dltbtn).length){
   //   $( element ).prevUntil( dltbtn).remove();

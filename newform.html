@@ -102,7 +102,7 @@
                   </p>
 
                   
-                  <select id="chooseSelect">
+                  <select id="chooseSelect" onchange="notShowBtns()">
                     <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
                     <option value="check" class="tablinks">Checkbox <i class="fa fa-angle-down"></i></option>
                     <option value="open" class="tablinks">Open <i class="fa fa-angle-down"></i></option>
@@ -159,7 +159,7 @@
                   <div class="other text-right pb-5 px-3" id="func-buttons">
                     <button type="button" class="btn btn-link" id="other">Digər...</button>
                     <button type="button" class="btn btn-outline-primary" onclick="addQuestion()">Sual əlavə et</button>
-                    <button type="button" class="btn btn-outline-primary" onclick="addSelect()">Variant əlavə
+                    <button type="button" class="btn btn-outline-primary" id="addVrnt" onclick="addSelect()">Variant əlavə
                       et</button>
                   
                   </div>

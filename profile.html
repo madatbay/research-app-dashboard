@@ -45,7 +45,7 @@
         <p class="badge badge-secondary">Admin</p>
       </div>
 
-      <ul class="list-unstyled components align-self-center d-flex flex-column">
+      <ul class="list-unstyled components  align-self-center d-flex flex-column">
         <li class="">
           <a href="mainPage.html"><i class="fas fa-rocket"></i> <span id="sideSpan">Dashboard</span> </a>
         </li>
@@ -61,17 +61,17 @@
         <li>
           <a href="#" class="surveys"><i class="fas fa-file-alt"></i> <span id="sideSpan">
               Sorğular</span></a>
-          <ul class=" list-unstyled active  align-items-center d-flex flex-column">
-            <li class="active"> <a href="allQueries.html"><i class="fas fa-file-alt"></i> <span
+          <ul class=" list-unstyled dropdown active  align-items-center d-flex flex-column">
+            <li class=""> <a href="allQueries.html"><i class="fas fa-file-alt"></i> <span
                   id="sideSpan">Bütün</span></a></li>
             <li><a href="newform.html"><i class="fas fa-file"></i> <span id="sideSpan">Yarat</span></a></li>
 
           </ul>
         </li>
 
-        <li>
+        <li class="active">
 
-          <a href="./profile.html"><i class="fas fa-cog"></i> <span id="sideSpan">Parametrlər </span>
+          <a href="./profile.html"><i class="fa fa-cog"></i> <span id="sideSpan">Parametrlər </span>
           </a>
         </li>
 
@@ -90,9 +90,10 @@
         <div class="profile">
           <div class="profile_form">
             <div class="title">
-              <h3>Profil</h3>
+              <h3>İstifadəçi Məlumatları</h3>
             </div>
-            <form action="" id="profileForm">
+
+            <form action="" class="profileForm">
               <div>
                 <label for="username">Username</label><br />
                 <input type="text" id="username" name="username" required /><br />
@@ -102,7 +103,22 @@
                 <input type="text" id="surname" name="surname" required /><br />
                 <label for="email">Email</label><br />
                 <input type="email" id="email" name="email" required /><br />
-              </div>
+
+                <div class="save"><button type="submit" onclick="save()">Yadda saxla</button></div>
+              </div> 
+              </form>
+            </div>
+       
+
+     
+              <div class="profile_form">
+
+                <div class="title">
+                  <h3>Şifrəni Dəyiş</h3>
+                </div>
+
+
+                <form action="" class="profileForm">
               <div>
                 <label for="lastpassword">Əvvəlki Şifrə</label><br />
                 <input type="password" id="prepassword" name="lastpassword" required /><br />
@@ -111,9 +127,10 @@
                 <label for="newpassword2">Yeni Şifrə Təkrarı</label><br />
                 <input type="password" id="newpassword2" name="newpassword2" class="" required /><br />
               </div>
-              <div class="save"><button type="submit" onclick="save()">Yadda saxla</button></div>
+              <div class="save"><button type="submit" onclick="save()">Şifrəni dəyiş</button></div>
             </form>
           </div>
+        </div>
         </div>
       </section>
 

@@ -16,8 +16,11 @@
   justify-content: center;
 
   .profile_form {
-    width: 90%;
-    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+height: 90%;
+width: 40%;
     overflow: hidden;
     margin: 5% auto;
     border-radius: 2px;
@@ -37,9 +40,9 @@
       }
     }
 
-    form {
+    .profileForm {
       div {
-        width: 50%;
+       
         height: auto;
         padding: 0 30px;
         float: left;
