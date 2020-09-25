@@ -741,6 +741,9 @@ a[data-toggle="collapse"] {
 }
 
 @media (max-width: 580px) {
+  .profile {
+    flex-direction: column;
+  }
   .card {
     width: 80%;
   }
