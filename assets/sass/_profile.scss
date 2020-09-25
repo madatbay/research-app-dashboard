@@ -54,13 +54,12 @@ text-align: center;
 @media (max-width: 580px)
 {
 
-  .profile{
-    flex-direction: column;
-  }
+.profileSection{
   .card{
    width: 80%;
   }
   h3{
     font-size: 25px;
   }
+}
 }
