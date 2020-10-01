@@ -102,6 +102,12 @@
                       id="question-input">
                   </p>
 
+
+            
+
+                 
+              
+
                   
                   <select id="chooseSelect" onchange="notShowBtns()">
                     <option value="radio" class="tablinks">Radiobox <i class="fa fa-angle-down"></i></option>
@@ -110,8 +116,29 @@
                     <option value="email" class="tablinks">Email <i class="fa fa-angle-down"></i></option>
                     <option value="date" class="tablinks">Date <i class="fa fa-angle-down"></i></option>
                   </select>
+
+                  
                   
                   <div class="radiosection tabcontent radio box" id="Radio">
+
+                  
+                   <button type="button" id="kebab"><i class=" fa fa-ellipsis-v "></i>
+                   </button> 
+
+                   <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Action
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </div>
+
+
                     <label><input type="radio" name="rad" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
                     <label><input type="radio" name="rad" id="" /><input class="text templateAnsw" type="text"
@@ -121,6 +148,8 @@
                     <label><input type="radio" name="rad" id="" /><input class="text templateAnsw" type="text"
                         placeholder="Birinci cavab"></label><br />
                         
+
+                      
                        
                   </div>
                   <div class="checksection tabcontent check box" id="Check">
@@ -226,7 +255,12 @@
 
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  
   <script src="assets/js/scripts.js"></script>
+
+
+  
 </body>
 <!--4vxySy9!&%+GqaX?-->
 </html>

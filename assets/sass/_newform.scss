@@ -1,4 +1,5 @@
 @import "navbar";
+@import "common";
 
 body {
   background-color: #f0f3f5;
@@ -147,4 +148,38 @@ input {
   border: none;
   background: none;
   border-bottom: 1px solid #c9c7c7;
+}
+
+.dropdownList {
+  position: absolute;
+  right: 0;
+  top: 3em;
+  transition: all 0.25s ease-out;
+  transform: scale(0);
+  transform-origin: 100% 0;
+  // box-shadow: $shadow;
+  li {
+    display: block;
+    width: 100%;
+    a {
+      width: 100%;
+      padding: 1em 18px;
+      display: inline-block;
+      white-space: pre;
+      box-sizing: border-box;
+      &:hover {
+        // background: lighten($grey, 30%);
+      }
+    }
+  }
+&:hover {
+  ul {
+    transform: scale(1);
+  }
+}
+}
+
+.dropdown.active {
+transform: scale(1);
+transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
 }
