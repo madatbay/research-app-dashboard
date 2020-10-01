@@ -309,9 +309,6 @@ function addSelect() {
 //sual elave et
 
 function addQuestion() {
-  var formDelete = document.createElement('BUTTON');
- 
-  
 
  
   // var dropdown2 = document.getElementsByClassName("dropdownList");
@@ -328,15 +325,11 @@ function addQuestion() {
   // kebab.setAttribute("data-toggle", "dropdown");
 
 
-  kebab.addEventListener('click', function () {
-    // dropdown2.toggleClass("active")
-    alert("hey");
-    // mydropdown.classList.toggle('active');
-  });
+
 
   // formDelete.setAttribute("id","kebab");
-  formDelete.setAttribute("type","button")
-  formDelete.setAttribute("class","actions");
+  // formDelete.setAttribute("type","button")
+  // formDelete.setAttribute("class","actions");
   // formDelete.setAttribute("onclick","deleteBtn(this)");
 
   var activeType = document.getElementsByClassName("box");
@@ -561,7 +554,6 @@ var mydropdown = document.querySelector('.actionsDropdown');
 var kebab = document.getElementById("kebab"); 
 
 kebab.addEventListener('click', function () {
-  // dropdown2.toggleClass("active")
-  // alert("hey");
-   mydropdown.classList.toggle('active');
+
+  
 });
