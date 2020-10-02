@@ -309,13 +309,28 @@ function addSelect() {
 //sual elave et
 
 function addQuestion() {
-  var formDelete = document.createElement('BUTTON');
-  var text = document.createTextNode("Sil"); 
-  formDelete.appendChild(text); 
-  formDelete.setAttribute("id","deleteForm");
-  formDelete.setAttribute("type","button")
-  formDelete.setAttribute("class","btn btn-outline-danger");
-  formDelete.setAttribute("onclick","deleteBtn(this)");
+
+ 
+  // var dropdown2 = document.getElementsByClassName("dropdownList");
+  // dropdown2.setAttribute("class", "dropdownList");
+  // var deleteQuestion = document.createElement("li");
+  // // deleteQuestion.insertAdjacentText("Ssss");
+
+ 
+
+  // formDelete.appendChild(kebab); 
+
+  // kebab.setAttribute("id", "actionsDropdown");
+  // kebab.setAttribute("class", "fa fa-ellipsis-v");
+  // kebab.setAttribute("data-toggle", "dropdown");
+
+
+
+
+  // formDelete.setAttribute("id","kebab");
+  // formDelete.setAttribute("type","button")
+  // formDelete.setAttribute("class","actions");
+  // formDelete.setAttribute("onclick","deleteBtn(this)");
 
   var activeType = document.getElementsByClassName("box");
   var formAdd = document.getElementById("addQstn");
@@ -532,4 +547,13 @@ $(':checkbox').change(function(){
   if ($(':checkbox:checked').length == $(':checkbox').length-1) { 
 		$("#select-all")[0].checked = true; 
 	}
+});
+
+var mydropdown = document.querySelector('.actionsDropdown');
+
+var kebab = document.getElementById("kebab"); 
+
+kebab.addEventListener('click', function () {
+
+  
 });
