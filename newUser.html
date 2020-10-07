@@ -79,7 +79,7 @@
 
       </ul>
       <div class="footer text-center">
-        <a href="./index.html"><i class="fas fa-sign-out-alt"></i> <span id="sideSpan">Profildən
+        <a href="./mainPage.html"><i class="fas fa-sign-out-alt"></i> <span id="sideSpan">Profildən
             çıxış</span></a>
       </div>
 
@@ -187,7 +187,14 @@
 
 
 
-
+  <script>
+    $(".create-button").click(function () {
+      if (($("#username").val() != "") && ($("#firstname").val() != "") && ($("#lastname").val() != "") && ($(
+          "#phone").val() != "") && ($("#email").val() != "") && ($("#password").val() != "")) {
+        alert("Yeni istifadəçi əlavə olundu");
+      }
+    });
+  </script>
 
 
 </body>

@@ -24,6 +24,10 @@
 
 //   return array;
 // }
+var allDisables = document.querySelectorAll("#reviewDisable");
+for(var i = 0; i <allDisables.length; i++){
+  allDisables[i].disabled =true
+}
 
 function randString(id) {
   var dataSet = $(id).attr("data-character-set").split(",");
@@ -66,20 +70,6 @@ function randString(id) {
     }
   }
 
-  //   var randomIndex;
-  //     var temp;
-
-  //   for (var i = possible.length; i > 0; i--) {
-
-  //    randomIndex = Math.floor(Math.random() * i);
-  //   var currentElement = possible.charAt(i);
-  //   var randomElement = possible.charAt(randomIndex);
-
-  //  temp = currentElement;
-  //  currentElement = possible[randomIndex];
-  //   randomElement = temp;
-
-  //   }
 
   return possible;
 }
@@ -112,9 +102,15 @@ function notShowBtns(){
  if($('#chooseSelect').val() === "open" || $('#chooseSelect').val() === "email" || $('#chooseSelect').val() === "date"){
    var addVrntBtn = document.getElementById("addVrnt");
    var addOtherBtn = document.getElementById("other")
-   addVrntBtn.remove();
-   addOtherBtn.remove()
+   addVrntBtn.style.display = "none";
+   addOtherBtn.style.display = "none";
 
+ }
+ else{
+  var addVrntBtn = document.getElementById("addVrnt");
+  var addOtherBtn = document.getElementById("other")
+  addVrntBtn.style.display = "inline";
+  addOtherBtn.style.display = "inline";
  }
 }
 
@@ -233,11 +229,7 @@ $(document).ready(function () {
     alert("Məlumatlar uğurla yadda saxlanıldı");
   });
 });
-//addInfo function in newForm page
 
-function addInfo() {
-  alert("Məlumatlar uğurla yadda saxlanıldı");
-}
 
 //tesdiqle
 function confirmForm() {
@@ -246,19 +238,23 @@ function confirmForm() {
 
 //diger buttonu
 
-$("#other").one("click", function () {
-  var parent = document.querySelector("#addOther");
-  var newLabel = document.createElement("label");
-  var newInput = document.createElement("input");
-  newLabel.className = "newLabelClass";
-  newLabel.id = "otherid"
-  newInput.className = "addOtherClass";
-  newInput.id = "otherTextid"
-  newInput.type = "text";
-  newLabel.appendChild(document.createTextNode("Digər"));
-  newLabel.appendChild(newInput);
-  parent.appendChild(newLabel);
-});
+function addOther(element){
+  var otherVrnt = $(element.parentNode).prev()
+  if($(otherVrnt).attr("id")=="addOther"){
+    if($(otherVrnt).children().length == 0 ){
+      var newLabel = document.createElement("label");
+      var newInput = document.createElement("input");
+      newLabel.className = "newLabelClass";
+      newLabel.id = "otherid";
+      newInput.className = "addOtherClass";
+      newInput.id = "otherTextid"
+      newInput.type = "text";
+      newLabel.appendChild(document.createTextNode("Digər"));
+      newLabel.appendChild(newInput);
+      otherVrnt[0].appendChild(newLabel);
+    }
+  }
+}
 
 //variant elave et buttonu
 
@@ -276,9 +272,11 @@ function addSelect() {
   for (let i = 0; i < activeType.length; i++) {
     if (activeType[i].style.display == "block") {
       let newLabel = document.createElement("label");
+      newLabel.id = "newAddedLabel"
       let elemType = document.createElement("input");
       let elemText = document.createElement("input");
       let br = document.createElement("br");
+      br.id = "newAddedBr"
       elemType.setAttribute(
         "type",
         activeType[i].childNodes[1].childNodes[0].type
@@ -287,60 +285,103 @@ function addSelect() {
       elemText.setAttribute("type", "text");
       elemText.className = "text";
       elemText.id = "newVariantText"
-      elemText.placeholder = "Yeni Variant";
+      elemText.placeholder = "Birinci cavab";
       activeType[i].appendChild(newLabel);
       newLabel.appendChild(elemType);
       newLabel.appendChild(elemText);
       newLabel.parentNode.append(br);
     }
   }
-
-  // for (let i = 0; i < activeType.length; i++) {
-  //   if (activeType[i].style.display == "block") {
-  //     newLabel.appendChild(document.createTextNode("Digər"));
-  //     newLabel.appendChild(newInput);
-  //     activeType[i].appendChild(newLabel);
-  //   }
-  // }
 }
 
 
-
-//sual elave et
+//***************************************sual elave et***********************************
 
 function addQuestion() {
-
- 
-  // var dropdown2 = document.getElementsByClassName("dropdownList");
-  // dropdown2.setAttribute("class", "dropdownList");
-  // var deleteQuestion = document.createElement("li");
-  // // deleteQuestion.insertAdjacentText("Ssss");
-
- 
-
-  // formDelete.appendChild(kebab); 
-
-  // kebab.setAttribute("id", "actionsDropdown");
-  // kebab.setAttribute("class", "fa fa-ellipsis-v");
-  // kebab.setAttribute("data-toggle", "dropdown");
+  /***************Dropdown added questions*********** */
+  var btnGroup = document.createElement("div");
+  btnGroup.classList = "btn-group  col-1 offset-10 "
+  btnGroup.id = "templateDropdown"
+  var drpdwnBtn = document.createElement("button");
+  drpdwnBtn.setAttribute("type","button");
+  drpdwnBtn.id = "kebab";
+  drpdwnBtn.classList = "btn btn-secondary dropdown-toggle";
+  drpdwnBtn.setAttribute("data-toggle","dropdown");
+  drpdwnIcon = document.createElement("i");
+  drpdwnIcon.classList = "fa fa-ellipsis-v "
+  drpdwnBtn.appendChild(drpdwnIcon)
 
 
+  var drpdwnDiv = document.createElement("div");
+  drpdwnDiv.classList ="dropdown-menu"
 
+/****************dropdown add variant******* */
+  var drpdwnAddVrnt = document.createElement("a");
+  drpdwnAddVrnt.classList = "dropdown-item";
+  drpdwnAddVrnt.setAttribute("href","javascript:void(0)");
+  drpdwnAddVrnt.setAttribute("onclick", "addVariantToPrev(this)");
+  var drpdwnAddVrntText = document.createTextNode("Variant əlavə et")
+  drpdwnAddVrnt.appendChild(drpdwnAddVrntText)
 
-  // formDelete.setAttribute("id","kebab");
-  // formDelete.setAttribute("type","button")
-  // formDelete.setAttribute("class","actions");
-  // formDelete.setAttribute("onclick","deleteBtn(this)");
+/**************dorpdown add other variant******* */
+  var drpdwnAddOther = document.createElement("a");
+  drpdwnAddOther.classList = "dropdown-item";
+  drpdwnAddOther.setAttribute("href","javascript:void(0)");
+  drpdwnAddOther.setAttribute("onclick", "addOtherVrnt(this)");
+  var drpdwnAddOtherText = document.createTextNode("\"Digər\" variantı əlavə et")
+  drpdwnAddOther.appendChild(drpdwnAddOtherText)
 
+    /***************************dropdown delete last variant ******/
+  var drpdwnDltVrnt = document.createElement("a");
+  drpdwnDltVrnt.classList = "delete-button dropdown-item";
+  drpdwnDltVrnt.setAttribute("href","javascript:void(0)");
+  drpdwnDltVrnt.setAttribute("onclick", "deleteLastVrnt(this)");
+  var drpdwnDltVrntText = document.createTextNode("Son variantı sil")
+  drpdwnDltVrnt.appendChild(drpdwnDltVrntText)
+
+  /**********************dropdown delete other variant****************** */
+  var drpdwnDltOther = document.createElement("a");
+  drpdwnDltOther.classList = "delete-button dropdown-item";
+  drpdwnDltOther.setAttribute("href","javascript:void(0)");
+  drpdwnDltOther.setAttribute("onclick", "deleteOtherVrnt(this)");
+  var drpdwnDltOtherText = document.createTextNode("\"Digər\" variantını sil")
+  drpdwnDltOther.appendChild(drpdwnDltOtherText)
+
+  /**************************dropdown delete question******* */
+  var drpdwnDltQstn = document.createElement("a");
+  drpdwnDltQstn.classList = "delete-button dropdown-item";
+  drpdwnDltQstn.setAttribute("href","javascript:void(0)");
+  drpdwnDltQstn.setAttribute("onclick", "deleteQstn(this)");
+  var drpdwnDltQstnText = document.createTextNode("Sil")
+  drpdwnDltQstn.appendChild(drpdwnDltQstnText)
+
+  /*************************append dropdown************* */
+  if($('#chooseSelect').val() === "open" || $('#chooseSelect').val() === "email" || $('#chooseSelect').val() === "date"){
+    drpdwnDiv.appendChild(drpdwnDltQstn)
+  }
+  else{
+   
+      drpdwnDiv.appendChild(drpdwnAddVrnt);
+      drpdwnDiv.appendChild(drpdwnAddOther);
+      drpdwnDiv.appendChild(drpdwnDltVrnt);
+      drpdwnDiv.appendChild(drpdwnDltOther)
+      drpdwnDiv.appendChild(drpdwnDltQstn)
+    
+  }
+  
+
+  btnGroup.appendChild(drpdwnBtn)
+  btnGroup.appendChild(drpdwnDiv)
+
+/**************************clone questions and answers************ */
   var activeType = document.getElementsByClassName("box");
   var formAdd = document.getElementById("addQstn");
-  
-  
- 
   var question = document.getElementById("question-input").cloneNode(true);
-
+ 
   question.removeAttribute("id");
   question.setAttribute("id", "deleteQstn");
+  question.setAttribute("class", "question")
+  question.style.marginTop = "15px"
 
   console.log(question.value); 
   var answers = null;
@@ -357,71 +398,29 @@ function addQuestion() {
   }
 
   var other = document.getElementById("otherid");
-  console.log(other)
   if($(other).length !== 0){
     var otherType = document.getElementById("otherid").cloneNode(true);
     otherType.removeAttribute("id");
+    otherType.id = "newOtherId"
   }
   else{
-    // alert("2")
+   
   }
   linebreak = document.createElement("br");
-  
-   /**********************COUNT************* */
- 
-
-
 
   formAdd.appendChild(question);
+  formAdd.appendChild(btnGroup)
+  console.log(btnGroup)
   formAdd.appendChild(answers);
   if($(other).length !== 0){
       formAdd.appendChild(otherType)
   }
-  formAdd.appendChild(formDelete);
-  formAdd.appendChild(linebreak);
-
-  var form = document.forms["qstnForm"];
-  var inputs = form.querySelectorAll("input#deleteQstn");
-
-
-
-
-
-  // console.log(inputs.length)
-  /////////////////////////////////////////////////////
-    // for (var i = 1; i <= inputs.length; i++) {
-    //   var span = document.createElement('span');
-    //   // console.log(i)
-    //  inputs.toString();
-    //  console.log(inputs.html)
-    //  output = inputs[i];
-    //  console.log(output)
-    //  var content = document.createTextNode(output);
-    //  span.appendChild(content);
-    //  console.log(content)
-    //  var before = document.querySelector("#addQstn.templateInput");
-    //  document.body.insertBefore(span, before)
-    // }
-////////////////////////////////////////////////////////////////
-    //   inputs[i].parentNode.insertBefore(span, inputs[i].nextElementSibling)
-    //   // (function (index) {
-    //   //     span.innerHTML = index;
-    //   //     console.log(inputs[index])  
-    //   //     console.log(span)
-    //   //     if (inputs[index].nextElementSibling.tagName !== 'SPAN')
-    //   //     inputs[index].parentNode.insertBefore(span, inputs[index].nextElementSibling)
-    //   // })(i);
-
-    
-  
-
+  formAdd.appendChild(linebreak)
 
   /********************************Delete after adding************ */
 
   document.getElementById("question-input").value = "";
-    // $('input.templateAnsw').each(function(){
-    //     $(this).val('');
-    // }); 
+  
     var variants = document.getElementById("question-section").querySelectorAll(".templateAnsw");
   for(i = 0; i < variants.length; i++) {
     variants[i].value = ""
@@ -440,94 +439,12 @@ function addQuestion() {
  document.getElementById("question-section").querySelector("#addOther").innerHTML = "";
   document.getElementById("question-section").querySelector("#templateEmail").value = "";
 
-/******************after add read only questions************ */
-
-  var form = document.getElementById("addQstn");
-var elements = form.elements;
-for (var i = 0, len = elements.length; i < len; ++i) {
-    elements[i].readOnly = true;
-}
-
-  /*****************************Add other variant***************** */
-
-  $("#other").one("click", function () {
-    var parent = document.querySelector("#addOther");
-    var newLabel = document.createElement("label");
-    var newInput = document.createElement("input");
-    newLabel.className = "newLabelClass";
-    newLabel.id = "otherid"
-    newInput.className = "addOtherClass";
-    newInput.id = "otherTextid"
-    newInput.type = "text";
-    newLabel.appendChild(document.createTextNode("Digər"));
-    newLabel.appendChild(newInput);
-    parent.appendChild(newLabel);
-  });
-
-}
-
-
-
-
-function deleteBtn(element){
-  //  $(element).closest('div').find('label').remove();
-  // $(element).prevUntil("").remove()
-var form = document.getElementById("form");
-var dltbtn = document.getElementById("deleteForm");
-var qstn = document.getElementById("deleteQstn");
-var answ = document.getElementById("deleteAnsw");
-
-  // var elementType = $(element).prevUntil(desc).prop('nodeName');
-  // console.log(elementType)
-console.log(form)
-
-
-
-var btn= $(element).closest(":has(button)").find('button');
-
-var comparetext = 'Sil'
- if(confirm("Bu sualı silmək istədiyinizdən əminsinizmi?")){
-  if(btn.html().trim() === comparetext){
-    $( element ).prevUntil( btn).remove();
-      $(element).remove()
-    // alert("1")
-  }
-  else{
-    $( element ).prevUntil( form).remove();
-      dltbtn.remove();
-  }
-}
-  // if($(dltbtn).length){
-  //   $( element ).prevUntil( dltbtn).remove();
-  //   dltbtn.remove()
-  // }
-  // else{
-  //   $( element ).prevUntil( form).remove();
-  //   dltbtn.remove();
-  // }
-    
-  // }
-
+ 
   
-  // $(element).remove()
-
-  
+  lstQuestions();
 }
-// $("#deleteForm").click(function () {
-//   $(this).parent().remove(); 
 
-// });
-
-
-//******************************COUNTER********************** */
-
-// var count = 0;
-// var countButton = document.getElementById("countButton");
-// var displayCount = document.getElementById("displayCount");
-// countButton.onclick = function(){
-//   count++;
-//   displayCount.innerHTML = count;
-// }
+/******************************************************************************** */
 
 
 //select all checkboxes
@@ -549,11 +466,81 @@ $(':checkbox').change(function(){
 	}
 });
 
-var mydropdown = document.querySelector('.actionsDropdown');
+//******************************COUNTER********************** */
 
-var kebab = document.getElementById("kebab"); 
+function lstQuestions(){
+  var questions = document.getElementsByClassName('question');
+  console.log(questions.length)
+  document.querySelectorAll('.questionCount').forEach(e => e.remove());
+  for(i=1; i<=questions.length; i++){
+    countDiv = document.createElement('div');
+    countDiv.style.display = "inline-block";
+    countDiv.classList = "questionCount"
+    countDiv.style.marginRight = "10px";
+    countDiv.innerHTML = i + ")";
+    $(countDiv).insertBefore(questions[i-1]);
+  }
 
-kebab.addEventListener('click', function () {
+}
 
-  
-});
+/************************Add variant to previous questions************* */
+function addVariantToPrev(element){
+
+    var lastVrnt = $(element.parentNode.parentNode).nextUntil( "div.questionCount" ).find('label.variant:last');
+    var breakAfterVrnt = document.createElement("br");
+    var newLastVrnt = lastVrnt[0].cloneNode(true);
+    $(newLastVrnt).insertAfter(lastVrnt);
+    $(breakAfterVrnt).insertBefore(newLastVrnt);
+}
+
+
+/*****************************Delete last variant from previous questions */
+function deleteLastVrnt(element){
+  console.log(element.parentNode.parentNode)
+  var lastVrnt = $(element.parentNode.parentNode).nextUntil( "div.questionCount" ).find('label.variant:last');
+  lastVrnt.remove()
+}
+
+/************************Delete added questions*********** */
+function deleteQstn(element){
+var dropdown = element.parentNode.parentNode;
+console.log(dropdown)
+var qstnInput = $(dropdown).prev();
+var answers = $(dropdown).next();
+var breakkk = $(dropdown).next().next()
+qstnInput.remove();
+$(dropdown).remove();
+answers.remove()
+breakkk.remove()
+lstQuestions()
+}
+
+/************************************dropdown delete other variant function************ */
+function deleteOtherVrnt(element){
+  var newOtherId = $(element.parentNode.parentNode).nextUntil("div.questionCount" ).next();
+  console.log(newOtherId[0])
+  if($(newOtherId).attr('id') == "newOtherId"){
+    newOtherId[0].remove()
+  }
+}
+
+/************************************dropdown add other variant function************ */
+function addOtherVrnt(element){
+
+    console.log(element.parentNode.parentNode)
+    var otherExist = ($(element.parentNode.parentNode).next().next())[0];
+    console.log(otherExist)
+    if($(otherExist).attr('id') !=="newOtherId"){
+      var newLabel = document.createElement("label");
+      var newInput = document.createElement("input");
+      newLabel.className = "newLabelClass";
+      newLabel.id = "newOtherId"
+      newInput.className = "addOtherClass";
+      newInput.id = "otherTextid"
+      newInput.type = "text";
+      newLabel.appendChild(document.createTextNode("Digər"));
+      newLabel.appendChild(newInput);
+      $(newLabel).insertBefore(otherExist)
+
+    }      
+    }
